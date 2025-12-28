@@ -1,0 +1,2618 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 4769
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 15 Tf
+17.25 TL
+0 g
+0. Tc
+56.6929133858267775 756.8506299212598378 Td
+(Usuário:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 722.8348818897637784 Td
+(Atue como um arquiteto de sistemas experiente com profundo conhecimento em) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 702.9923622047243725 Td
+(engenharia de software e modernização de aplicações. Você será apresentado a uma) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 683.1498425196850803 Td
+(aplicação existente de controle de prontuário na nuvem, composta por módulos de) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 663.3073228346456744 Td
+(médicos, pacientes e convênios. O sistema permite que pacientes mantenham e acessem) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 643.4648031496062686 Td
+(seus prontuários, incluindo downloads de imagens e informações de exames, enquanto) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 623.6222834645668627 Td
+(médicos podem acessar os prontuários de seus pacientes associados. A aplicação atual é) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 603.7797637795274568 Td
+(baseada em login, com páginas carregadas dinamicamente com base no tipo de usuário.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 575.4333070866141497 Td
+(Sua tarefa é analisar a estrutura atual da aplicação e propor uma modernização,) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 555.5907874015747439 Td
+(identificando possíveis módulos independentes com base nas responsabilidades distintas.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 535.748267716535338 Td
+(Considere os seguintes pontos específicos:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 507.4018110236219741 Td
+(Identifique as responsabilidades principais dos módulos existentes \(médicos, pacientes e) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 487.559291338582625 Td
+(convênios\) e como eles interagem com o prontuário.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 459.2128346456692611 Td
+(Analise a estrutura atual baseada em login e carregamento dinâmico de páginas e sugira) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 439.3703149606298552 Td
+(melhorias para uma arquitetura mais modular e escalável.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 411.0238582677164914 Td
+(Avalie se os módulos identificados \(médicos, pacientes e convênios\) podem ser) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 391.1813385826770855 Td
+(considerados microsserviços independentes ou se há outras formas de modularização) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 371.3388188976377364 Td
+(mais adequadas.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 342.9923622047243725 Td
+(Considere as necessidades de segurança, especialmente em relação ao acesso a) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 323.1498425196849666 Td
+(prontuários médicos e informações sensíveis de pacientes.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 294.8033858267715459 Td
+(Forneça recomendações para melhorar a manutenibilidade, escalabilidade e performance) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 274.9608661417322537 Td
+(da aplicação.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 246.614409448818833 Td
+(Sua resposta deve ser estruturada em seções claras, abordando:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 218.2679527559054122 Td
+(Introdução: Descrição resumida da aplicação atual e objetivos da modernização.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 189.9214960629919915 Td
+(Análise da Estrutura Atual: Identificação das responsabilidades e interações dos módulos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 170.0789763779526993 Td
+(existentes.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 141.7325196850392786 Td
+(Proposta de Modernização: Sugestões para modularização, melhorias na arquitetura e) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 121.8899999999998727 Td
+(considerações de segurança.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 93.5435433070865656 Td
+(Recomendações: Diretrizes para melhorar manutenibilidade, escalabilidade e) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 3490
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(performance.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 756.8506299212598378 Td
+(Forneça uma resposta concisa e focada nas necessidades específicas da aplicação) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 737.0081102362204319 Td
+(descrita, considerando as melhores práticas de engenharia de software e arquitetura de) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 717.1655905511811397 Td
+(sistemas.) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0 g
+0. Tc
+56.6929133858267775 660.4726771653542983 Td
+(IA:) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0 g
+0. Tc
+56.6929133858267775 598.1104724409448181 Td
+(Análise e Modernização de Arquitetura: Sistema de Controle de) Tj
+ET
+BT
+/F2 15 Tf
+17.25 TL
+0 g
+0. Tc
+56.6929133858267775 578.2679527559055259 Td
+(Prontuário em Nuvem) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+0. Tc
+56.6929133858267775 515.9057480314959321 Td
+(Introdução) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 481.8899999999999295 Td
+(O sistema atual é uma aplicação web monolítica baseada em login centralizado com) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 462.0474803149605805 Td
+(carregamento dinâmico de páginas conforme o perfil do usuário \(médico, paciente,) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 442.2049606299212314 Td
+(administrador de convênio\). Embora funcional, essa abordagem apresenta limitações em) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 422.3624409448818255 Td
+(escalabilidade, manutenibilidade e performance, além de concentrar riscos de segurança) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 402.5199212598424765 Td
+(em um único ponto de falha.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 374.1734645669290558 Td
+(Objetivos da modernização:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 345.8270078740156919 Td
+(Decomposição em módulos independentes e escaláveis) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 317.480551181102328 Td
+(Implementação de arquitetura orientada a serviços ou microsserviços) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 289.1340944881889072 Td
+(Fortalecimento da segurança e isolamento de responsabilidades) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 260.7876377952754865 Td
+(Melhorias em performance, observabilidade e resiliência) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+0. Tc
+56.6929133858267775 204.0947244094487587 Td
+(Análise da Estrutura Atual) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 141.7325196850392786 Td
+(1. Responsabilidades Principais dos Módulos) Tj
+ET
+56.6929133858267775 113.3860629921258862 481.8941732283464034 -31.1811023622047259 re
+S
+BT
+/F2 10 Tf
+11.5 TL
+0 g
+0. Tc
+62.3622047244094517 102.0474803149605805 Td
+(Módulo) Tj
+ET
+217.3243044619422051 113.3860629921258862 m
+217.3243044619422051 82.2049606299211604 l
+S
+BT
+/F2 10 Tf
+11.5 TL
+0 g
+0. Tc
+222.9935958005249006 102.0474803149605805 Td
+(Responsabilidades Principais) Tj
+ET
+377.9556955380576255 113.3860629921258862 m
+377.9556955380576255 82.2049606299211604 l
+S
+BT
+/F2 10 Tf
+11.5 TL
+0 g
+0. Tc
+383.624986876640321 102.0474803149605805 Td
+(Interações) Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 5124
+>>
+stream
+0.5670000000000001 w
+0 G
+56.6929133858267775 790.8663779527558972 481.8941732283464034 -31.1811023622047259 re
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+62.3622047244094517 779.5277952755905062 Td
+(Pacientes) Tj
+ET
+217.3243044619422051 790.8663779527558972 m
+217.3243044619422051 759.6852755905511003 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+222.9935958005249006 779.5277952755905062 Td
+(Manutenção de perfil, acesso ao) Tj
+ET
+377.9556955380576255 790.8663779527558972 m
+377.9556955380576255 759.6852755905511003 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+383.624986876640321 779.5277952755905062 Td
+(Lê dados do prontuário; autoriza) Tj
+ET
+56.6929133858267775 759.6852755905511003 481.8941732283464034 -31.1811023622047259 re
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+62.3622047244094517 748.346692913385823 Td
+(Médicos) Tj
+ET
+217.3243044619422051 759.6852755905511003 m
+217.3243044619422051 728.5041732283464171 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+222.9935958005249006 748.346692913385823 Td
+(Acesso aos prontuários de) Tj
+ET
+377.9556955380576255 759.6852755905511003 m
+377.9556955380576255 728.5041732283464171 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+383.624986876640321 748.346692913385823 Td
+(Escreve no prontuário; consulta) Tj
+ET
+56.6929133858267775 728.5041732283464171 481.8941732283464034 -31.1811023622047259 re
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+62.3622047244094517 717.1655905511811397 Td
+(Convênios) Tj
+ET
+217.3243044619422051 728.5041732283464171 m
+217.3243044619422051 697.3230708661417339 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+222.9935958005249006 717.1655905511811397 Td
+(Gerenciamento de) Tj
+ET
+377.9556955380576255 728.5041732283464171 m
+377.9556955380576255 697.3230708661417339 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+383.624986876640321 717.1655905511811397 Td
+(Consulta prontuários para) Tj
+ET
+56.6929133858267775 697.3230708661417339 481.8941732283464034 -31.1811023622047259 re
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+62.3622047244094517 685.9844881889763428 Td
+(Prontuário \(Core\)) Tj
+ET
+217.3243044619422051 697.3230708661417339 m
+217.3243044619422051 666.1419685039369369 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+222.9935958005249006 685.9844881889763428 Td
+(Armazenamento centralizado de) Tj
+ET
+377.9556955380576255 697.3230708661417339 m
+377.9556955380576255 666.1419685039369369 l
+S
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+0. Tc
+383.624986876640321 685.9844881889763428 Td
+(Centro de integração de todos os) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 603.7797637795274568 Td
+(2. Problemas Identificados na Arquitetura Atual) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 569.7640157480313974 Td
+(2.1 Acoplamento Monolítico) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 541.4175590551180903 Td
+(Carregamento dinâmico de páginas cria lógica condicional espalhada pela aplicação) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 513.0711023622046696 Td
+(Difícil isolar falhas e realizar testes independentes) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 484.7246456692913057 Td
+(Escalabilidade limitada \(um servidor para todas as responsabilidades\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 456.378188976377885 Td
+(2.2 Autenticação Centralizada) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 428.0317322834645211 Td
+(Único ponto de falha para controle de acesso) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 399.6852755905511003 Td
+(Sem isolamento entre contextos de usuário \(médico, paciente, convênio\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 371.3388188976377364 Td
+(Dificuldade em implementar políticas granulares de segurança) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 342.9923622047243725 Td
+(2.3 Prontuário como Entidade Monolítica) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 314.6459055118109518 Td
+(Todas as operações de leitura/escrita em um único banco de dados) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 286.2994488188975311 Td
+(Contenção em acesso a dados para múltiplos usuários simultâneos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 257.952992125984224 Td
+(Histórico não segregado por tipo de operação \(auditoria, backup, recuperação\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 229.6065354330708033 Td
+(2.4 Falta de Isolamento de Dados) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 201.2600787401573825 Td
+(Risco de acesso não autorizado \(vulnerabilidades de autorização\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 172.9136220472439618 Td
+(Sem segregação clara de responsabilidades entre módulos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 144.5671653543306547 Td
+(Dificuldade em implementar conformidade com regulações \(HIPAA, LGPD\)) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+0. Tc
+56.6929133858267775 87.8742519685038133 Td
+(Proposta de Modernização) Tj
+ET
+endstream
+endobj
+9 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 10 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 4629
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(1. Arquitetura Orientada a Microsserviços) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 751.1813385826771992 Td
+(Recomenda-se uma arquitetura baseada em microsserviços com padrão de domínio) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 731.3388188976377933 Td
+(\(DDD\), onde cada módulo opera como um serviço independente com sua própria) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 711.4962992125983874 Td
+(responsabilidade:) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 668.9766141732283131 Td
+(%% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %  %   A P I) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 649.1340944881889072 Td
+( G a t e w a y   \( B F F   -   B a c k e n d   f o r   F r o n t e n d \)  %  %   A u t e n t i c a ç ã o ,   R o t e a m e n t o ,   R a t e   L i m i t i n g) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 629.291574803149615 Td
+(%  %% % % % %,% % % % % % % % % % % % % % %,% % % % % % % % % % % % % % %,% % % % % % % % % % % % % % %,% % % % % % % % % % % % % % % % %  %  %  %  %  %¼) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 609.4490551181102092 Td
+(%¼  %¼  %¼  %% % % % % % % % % % % % % %  %% % % % % % % % % % % % % %  %% % % % % % % % % % % % % % %  %% % % % % % % % % % % % % % %  %) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 589.6065354330708033 Td
+( P a t i e n t  %  %   P h y s i c i a n  %  %   H e a l t h   P l a n  %  %   M e d i c a l   R e c o r d%  %   S e r v i c e  %  %   S e r v i c e) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 569.7640157480313974 Td
+(%  %   S e r v i c e  %  %   S e r v i c e  %  %  %  %  %  %  %  %   \( C o r e   D o m a i n \)%  %   •   P r o f i l e s  %  %   •) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 549.9214960629921052 Td
+( L i c e n s i n g  %  %   •   C o v e r a g e  %  %   •   R e c o r d s  %  %   •   A u t h  %  %   •   S e s s i o n s  %  %   •   A u t h  %  %) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 530.0789763779526993 Td
+( •   A c c e s s   L o g  %  %   •   P r e f s  %  %   •   A c c e s s  %  %   •   F e e s  %  %   •   A u d i t  %  %% % % % % % %,% % % % % % %) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 510.2364566929133503 Td
+(%% % % % % % %,% % % % % % %  %% % % % % % %,% % % % % % % %  %% % % % % % %,% % % % % % % %  %  %  %  %) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 490.3939370078739444 Td
+(%% % % % % % % % % % % % % % % %4% % % % % % % % % % % % % % % %4% % % % % % % % % % % % % % % % %   E v e n t   B u s   /   M e s s a g e   Q u e u e) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 470.5514173228345953 Td
+(\(RabbitMQ / Kafka\)) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 408.1892125984251152 Td
+(2. Decomposição em Microsserviços Independentes) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 345.8270078740156919 Td
+(2.1 Serviço de Prontuário Médico \(Medical Record Service\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 311.8112598425195756 Td
+(Responsabilidades:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 283.4648031496062686 Td
+(Armazenamento imutável de registros médicos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 255.1183464566928478 Td
+(Controle centralizado de acesso \(RBAC - Role Based Access Control\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 226.7718897637794271 Td
+(Auditoria completa de leitura e escrita) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 198.4254330708660063 Td
+(Versionamento de registros) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 170.0789763779526993 Td
+(Tecnologias sugeridas:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 141.7325196850392786 Td
+(PostgreSQL com triggers para auditoria automática) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 113.3860629921258578 Td
+(Event sourcing para histórico imutável) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 85.0396062992125508 Td
+(Cache distribuído \(Redis\) para leitura de alta frequência) Tj
+ET
+endstream
+endobj
+11 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 12 0 R
+>>
+endobj
+12 0 obj
+<<
+/Length 3145
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(API Central:) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 742.6774015748030706 Td
+(GET /records/:patient_id # Listar prontuários POST /records/:patient_id #) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 722.8348818897637784 Td
+(Adicionar registro GET /records/:patient_id/audit # Auditoria PUT) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 702.9923622047243725 Td
+(/records/:record_id/access # Gerenciar permissões) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 640.6301574803148924 Td
+(2.2 Serviço de Pacientes \(Patient Service\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 606.614409448818833 Td
+(Responsabilidades:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 578.2679527559055259 Td
+(Perfil do paciente e dados pessoais) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 549.9214960629921052 Td
+(Gerenciamento de consentimentos \(autorização de acesso a médicos\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 521.5750393700786844 Td
+(Preferências e configurações) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 493.2285826771653205 Td
+(Dashboard pessoal) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 464.8821259842518998 Td
+(Separação clara:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 436.5356692913385359 Td
+(NÃO armazena dados médicos clínicos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 408.1892125984251152 Td
+(SIM armazena metadados de autorização e acesso) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 379.8427559055117513 Td
+(Integração:) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 337.323070866141677 Td
+( P a t i e n t   S e r v i c e  !’   M e d i c a l   R e c o r d   S e r v i c e   \( v i a   A P I \)   P a c i e n t e   a u t o r i z a  !’   M é d i c o) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 317.480551181102328 Td
+(obtém token para acessar prontuário) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 255.1183464566928478 Td
+(2.3 Serviço de Médicos \(Physician Service\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 221.1025984251967884 Td
+(Responsabilidades:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 192.7561417322833677 Td
+(Cadastro e credenciamento de médicos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 164.4096850393699469 Td
+(Especialidades e áreas de atuação) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 136.0632283464566399 Td
+(Sessões e autenticação específica) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 107.7167716535432191 Td
+(Associação com pacientes e convênios) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 79.3703149606297984 Td
+(Características:) Tj
+ET
+endstream
+endobj
+13 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 14 0 R
+>>
+endobj
+14 0 obj
+<<
+/Length 3163
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(Suporta logout automático de sessões expiradas) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 756.8506299212598378 Td
+(Rastreamento de login/logout para auditoria) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 728.5041732283464171 Td
+(Integração com CRM para feedback de pacientes) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 671.8112598425196893 Td
+(2.4 Serviço de Convênios \(Health Plan Service\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 637.7955118110235162 Td
+(Responsabilidades:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 609.4490551181102092 Td
+(Cobertura de procedimentos e medicações) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 581.1025984251967884 Td
+(Autorização pré-preenchida de despesas) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 552.7561417322833677 Td
+(Integração com processos de faturamento) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 524.4096850393700606 Td
+(Relatórios para análise de custos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 496.0632283464566399 Td
+(Isolamento:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 467.716771653543276 Td
+(Lê informações do prontuário apenas para validação de cobertura) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 439.3703149606298552 Td
+(Nunca modifica dados clínicos) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 411.0238582677164914 Td
+(Comunica-se via eventos assíncronos) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 354.3309448818897067 Td
+(2.5 Serviço de Autenticação e Autorização \(Auth Service\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 320.3151968503935905 Td
+(Responsabilidades centralizadas:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 291.9687401574802834 Td
+(Emissão de JWT tokens com roles específicas) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 263.6222834645668627 Td
+(Validação de tokens em todas as requisições) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 235.2758267716534419 Td
+(Gerenciamento de permissões granulares) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 206.9293700787401349 Td
+(Rate limiting por usuário) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 178.5829133858267141 Td
+(Implementação sugerida:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 150.2364566929132934 Td
+(OAuth 2.0 / OpenID Connect) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 121.8899999999998727 Td
+(Tokens JWT com tempo de expiração curto \(15-30 min\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 93.5435433070865656 Td
+(Refresh tokens para renovação segura) Tj
+ET
+endstream
+endobj
+15 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 16 0 R
+>>
+endobj
+16 0 obj
+<<
+/Length 3554
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(3. Padrão de Autenticação e Autorização Distribuído) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 751.1813385826771992 Td
+(Antes \(monolítico\):) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 708.6616535433070112 Td
+( U s u á r i o  !’   L o g i n   G l o b a l  !’   S e s s ã o   ú n i c a  !’   A c e s s o   a   t u d o   a u t o r i z a d o) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 674.6459055118109518 Td
+(Depois \(distribuído\):) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 632.1262204724408775 Td
+( U s u á r i o  !’   A u t h   S e r v i c e   \( J W T   c o m   r o l e s \)  !’   A P I   G a t e w a y   \( v a l i d a   t o k e n   +   r a t e   l i m i t \)) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 612.2837007874015853 Td
+(!’   M i c r o s s e r v i ç o   e s p e c í f i c o   \( v a l i d a   p e r m i s s õ e s   n o   c o n t e x t o   d o   d o m í n i o \)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 578.2679527559055259 Td
+(Tokens estruturados:) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 535.748267716535338 Td
+({ "sub": "user_id", "role": "physician|patient|plan_admin", "organization":) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 515.9057480314959321 Td
+("hospital_id", "specialties": ["cardiology", "oncology"], "exp": 1735689600 }) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 453.5435433070865656 Td
+(4. Fluxo de Acesso a Prontuários \(Exemplo Prático\)) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 405.3545669291337958 Td
+( S e q u ê n c i a :   M é d i c o   a c e s s a   p r o n t u á r i o   d e   p a c i e n t e   1 .   M é d i c o   f a z   l o g i n  !’   A u t h) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 385.5120472440944468 Td
+(Service retorna JWT com role "physician" 2. Médico solicita prontuário: GET) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 365.6695275590550409 Td
+(/api/medical-records/patient/12345 Authorization: Bearer <JWT> 3. API Gateway:) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 345.8270078740156919 Td
+(Valida token JWT Verifica expiração Valida rate limit 4. Medical Record Service:) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 325.9844881889763428 Td
+(Verifica se médico tem permissão \(via Patient Service\) Valida se paciente) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 306.1419685039369369 Td
+(autorizou este médico Log de auditoria: "Physician X acessou prontuário do) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 286.2994488188975311 Td
+( P a t i e n t   Y "  !’   R e t o r n a   d a d o s   c l í n i c o s   5 .   R e s p o s t a   é   r e g i s t r a d a   e   a u d i t a d a) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 223.9372440944881646 Td
+(5. Considerações de Segurança) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 161.5750393700786844 Td
+(5.1 Isolamento de Dados) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 127.559291338582625 Td
+(Segregação por tenant: Cada organização tem instâncias separadas de dados) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 99.2128346456692043 Td
+(Encryption at rest: Todos os prontuários criptografados com chaves gerenciadas \(KMS\)) Tj
+ET
+endstream
+endobj
+17 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 18 0 R
+>>
+endobj
+18 0 obj
+<<
+/Length 2640
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(Encryption in transit: TLS 1.3 em todas as comunicações) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 728.5041732283464171 Td
+(5.2 Controle de Acesso Granular) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 680.3151968503937042 Td
+(Permissões por contexto: - Médico A pode ler prontuário de Paciente X) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 660.4726771653542983 Td
+(\(autorizado\) - Médico B NÃO pode ler mesmo prontuário \(não autorizado\) -) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 640.6301574803148924 Td
+(Convênio C pode acessar APENAS para validação de cobertura - Admin pode ler com) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 620.7876377952754865 Td
+(auditoria completa) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 558.42543307086612 Td
+(5.3 Auditoria Completa) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 510.2364566929133503 Td
+(Log estruturado para cada acesso: { "timestamp": "2025-02-12T10:30:00Z",) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 490.3939370078739444 Td
+("user_id": "physician_123", "action": "read_record", "patient_id":) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 470.5514173228345953 Td
+("patient_456", "resource": "diagnoses", "status": "success|denied", "reason":) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 450.7088976377952463 Td
+("Not authorized" \(se negado\) }) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 388.3466929133857661 Td
+(5.4 Conformidade Regulatória) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 354.3309448818897067 Td
+(LGPD: Direito ao esquecimento implementado via soft-delete + eventual hard-delete) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 325.9844881889763428 Td
+(HIPAA: Auditoria completa de acesso, criptografia obrigatória) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 297.6380314960629221 Td
+(Retenção: Políticas de retenção por tipo de registro \(3-7 anos dependendo da Lei\)) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+0. Tc
+56.6929133858267775 240.9451181102361943 Td
+(Recomendações para Manutenibilidade, Escalabilidade e Performance) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 178.5829133858267141 Td
+(1. Manutenibilidade) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 116.220708661417234 Td
+(1.1 Estrutura de Código) Tj
+ET
+endstream
+endobj
+19 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 20 0 R
+>>
+endobj
+20 0 obj
+<<
+/Length 3204
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+( m e d i c a l - r e c o r d - s e r v i c e /  %% %    s r c /  %  %% %    d o m a i n /   #   E n t i d a d e s   e   l ó g i c a   d e   n e g ó c i o  %) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 765.3545669291338527 Td
+(%% %    a p p l i c a t i o n /   #   C a s o s   d e   u s o   \( r e a d   r e c o r d ,   a d d   n o t e \)  %  %% %    i n f r a s t r u c t u r e /   #) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 745.5120472440944468 Td
+( B a n c o   d e   d a d o s ,   A P I s   e x t e r n a s  %  %% %    p r e s e n t a t i o n /   #   C o n t r o l l e r s   e   v a l i d a ç ã o  %) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 725.6695275590550409 Td
+(%% %    s h a r e d /   #   U t i l i t á r i o s   e   t i p o s   c o m p a r t i l h a d o s  %% %    t e s t s /  %% %    D o c k e r f i l e  %% % ) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 705.8270078740157487 Td
+(docker-compose.yml) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 643.4648031496062686 Td
+(1.2 CI/CD Automatizado) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 609.4490551181102092 Td
+(Testes automatizados para cada serviço \(unit, integration\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 581.1025984251967884 Td
+(Deploy independente de cada microsserviço) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 552.7561417322833677 Td
+(Feature flags para rollout gradual) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 524.4096850393700606 Td
+(Rollback automático em caso de falha) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 467.716771653543276 Td
+(1.3 Versionamento de API) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 419.5277952755905062 Td
+(GET /v1/medical-records/:patient_id # Versão 1 GET) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 399.6852755905511003 Td
+(/v2/medical-records/:patient_id # Versão 2 \(com novos campos\)) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 337.323070866141677 Td
+(2. Escalabilidade) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 274.9608661417322537 Td
+(2.1 Escalabilidade Horizontal) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 240.9451181102361943 Td
+(Stateless: Cada instância do serviço pode processar qualquer requisição) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 212.5986614173227736 Td
+(Load balancing: Distribuir requisições entre múltiplas instâncias) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 184.2522047244093528 Td
+(Kubernetes: Orquestração automática de containers com auto-scaling) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 127.559291338582625 Td
+(2.2 Banco de Dados) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 93.5435433070865656 Td
+(Read replicas: Para leitura de prontuários \(pacientes, médicos\)) Tj
+ET
+endstream
+endobj
+21 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 22 0 R
+>>
+endobj
+22 0 obj
+<<
+/Length 2935
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(Write-through cache: Redis para operações frequentes) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 756.8506299212598378 Td
+(Sharding: Particionamento por patient_id para distribuição de carga) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 700.15771653543311 Td
+(2.3 Fila de Mensagens) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 666.1419685039369369 Td
+(Operações assíncronas: Envio de notificações, auditoria, relatórios) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 637.7955118110235162 Td
+(Desacoplamento: Serviços não esperam resposta imediata) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 595.2758267716535556 Td
+( M é d i c o   a d i c i o n a   p r e s c r i ç ã o  !’   H e a l t h   P l a n   S e r v i c e   r e c e b e   e v e n t o   a s s i n c r o n a m e n t e  !’) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 575.4333070866141497 Td
+( V a l i d a   c o b e r t u r a   e m   b a c k g r o u n d  !’   N o t i f i c a   r e s u l t a d o   v i a   e m a i l / S M S) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 513.0711023622046696 Td
+(3. Performance) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 450.7088976377952463 Td
+(3.1 Caching Estratégico) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 402.5199212598424765 Td
+(Nível 1: CDN \(Edge caching\) - Documentos públicos, imagens de exames Nível 2:) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 382.6774015748030706 Td
+(Cache de aplicação \(Redis\) - Perfis de pacientes \(5 min TTL\) - Listas de médicos) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 362.8348818897637216 Td
+(autorizados \(10 min TTL\) Nível 3: Cache do banco de dados \(QueryCache\) -) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 342.9923622047243725 Td
+(Consultas frequentes com expiração automática) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 280.6301574803148924 Td
+(3.2 Compressão e Otimização) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 246.614409448818833 Td
+(GZIP: Compressão de respostas HTTP) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 218.2679527559054122 Td
+(Lazy loading: Imagens de exames carregadas sob demanda) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 189.9214960629919915 Td
+(Pagination: Limitar resultados \(20-100 registros por página\)) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 133.2285826771652637 Td
+(3.3 Índices de Banco de Dados) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 85.0396062992125508 Td
+(-- Medical Record Service CREATE INDEX idx_patient_records ON) Tj
+ET
+endstream
+endobj
+23 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 24 0 R
+>>
+endobj
+24 0 obj
+<<
+/Length 3242
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(medical_records\(patient_id, created_at DESC\); CREATE INDEX idx_audit_access ON) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 765.3545669291338527 Td
+(access_audit\(patient_id, accessed_by, timestamp DESC\); -- Patient Service CREATE) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 745.5120472440944468 Td
+(INDEX idx_patient_doctors ON patient_authorizations\(patient_id, doctor_id\);) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 683.1498425196850803 Td
+(3.4 Monitoramento em Tempo Real) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 649.1340944881889072 Td
+(Prometheus + Grafana: Métricas de latência, throughput, erros) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 620.7876377952754865 Td
+(ELK Stack: Logs centralizados com busca full-text) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 592.4411811023621794 Td
+(Jaeger: Rastreamento distribuído entre microsserviços) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 535.748267716535338 Td
+(4. Infraestrutura Recomendada) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 473.3860629921259147 Td
+(4.1 Arquitetura de Deploy) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 425.1970866141731449 Td
+( A m b i e n t e   d e   D e s e n v o l v i m e n t o  !“   T e s t e s   A u t o m a t i z a d o s   \( G i t H u b   A c t i o n s   /   G i t L a b   C I \)) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 405.3545669291337958 Td
+(!“   S t a g i n g   \( r e p l i c a   d o   p r o d u ç ã o \)  !“   P r o d u c t i o n   \( M u l t i - r e g i o n   p a r a   h i g h) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 385.5120472440944468 Td
+( a v a i l a b i l i t y \)  !“   D i s a s t e r   R e c o v e r y   \( B a c k u p   a u t o m á t i c o ,   r e p l i c a ç ã o \)) Tj
+ET
+BT
+/F2 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 323.1498425196849666 Td
+(4.2 Tecnologia Stack Sugerida) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 289.1340944881889072 Td
+(| Serviços | Node.js/TypeScript ou Python/FastAPI | Desenvolvimento rápido, comunidade) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 269.2915748031495013 Td
+(ativa |) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 240.9451181102361943 Td
+(| Cache | Redis | Performance de leitura, sessões |) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 212.5986614173227736 Td
+(| Orquestração | Kubernetes | Auto-scaling, self-healing, multi-cloud |) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 184.2522047244093528 Td
+(| Monitoramento | Prometheus + Grafana | Métricas de performance |) Tj
+ET
+BT
+/F2 13 Tf
+14.9499999999999993 TL
+0 g
+0. Tc
+56.6929133858267775 127.559291338582625 Td
+(5. Cronograma Sugerido para Migração) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 79.3703149606297984 Td
+(Fase 1 \(Meses 1-2\): Foundation Implementar Auth Service Criar API Gateway Setup) Tj
+ET
+endstream
+endobj
+25 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 26 0 R
+>>
+endobj
+26 0 obj
+<<
+/Length 2416
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 785.1970866141732586 Td
+(de infraestrutura \(Kubernetes, Observabilidade\) Fase 2 \(Meses 3-4\): Core) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 765.3545669291338527 Td
+(Services Medical Record Service \(separar do monolito\) Patient Service \(com) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 745.5120472440944468 Td
+(autorização de acesso\) Implementar event bus para comunicação Fase 3 \(Meses) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 725.6695275590550409 Td
+(5-6\): Specialist Services Physician Service Health Plan Service Integração de) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 705.8270078740157487 Td
+(eventos entre serviços Fase 4 \(Meses 7-8\): Otimização e Sunset Testes de carga e) Tj
+ET
+BT
+/F5 10 Tf
+11.5 TL
+0 g
+0. Tc
+56.6929133858267775 685.9844881889763428 Td
+(performance Deprecação gradual do monolito Treinamento e documentação) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0 g
+0. Tc
+56.6929133858267775 623.6222834645668627 Td
+(Conclusão) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 589.6065354330708033 Td
+(A modernização proposta transforma a aplicação de um monolito acoplado em uma) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 569.7640157480313974 Td
+(arquitetura de microsserviços desacoplada, trazendo os seguintes benefícios:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 541.4175590551180903 Td
+(| Segurança | Centralizada, monolítica | Granular, distribuída, auditada |) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 513.0711023622046696 Td
+(| Deploy | Monolítico, risco alto | Independente, risco baixo |) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 484.7246456692913057 Td
+(| Conformidade | Difícil de auditar | Auditoria completa, rastreável |) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 456.378188976377885 Td
+(Essa abordagem alinha-se com as melhores práticas de engenharia de software moderna) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 436.5356692913385359 Td
+(e prepara a aplicação para crescimento futuro com confiabilidade, segurança e) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+0. Tc
+56.6929133858267775 416.69314960629913 Td
+(performance.) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R 23 0 R 25 0 R ]
+/Count 12
+>>
+endobj
+27 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+28 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+29 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+30 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+31 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+32 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+33 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+34 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+35 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+36 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+37 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+38 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+39 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+40 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 27 0 R
+/F2 28 0 R
+/F3 29 0 R
+/F4 30 0 R
+/F5 31 0 R
+/F6 32 0 R
+/F7 33 0 R
+/F8 34 0 R
+/F9 35 0 R
+/F10 36 0 R
+/F11 37 0 R
+/F12 38 0 R
+/F13 39 0 R
+/F14 40 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+41 0 obj
+<<
+/Producer (jsPDF 3.0.1)
+/CreationDate (D:20251227222125-03'00')
+>>
+endobj
+42 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 43
+0000000000 65535 f 
+0000044620 00000 n 
+0000046517 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000004973 00000 n 
+0000005110 00000 n 
+0000008652 00000 n 
+0000008789 00000 n 
+0000013965 00000 n 
+0000014103 00000 n 
+0000018785 00000 n 
+0000018924 00000 n 
+0000022122 00000 n 
+0000022261 00000 n 
+0000025477 00000 n 
+0000025616 00000 n 
+0000029223 00000 n 
+0000029362 00000 n 
+0000032055 00000 n 
+0000032194 00000 n 
+0000035451 00000 n 
+0000035590 00000 n 
+0000038578 00000 n 
+0000038717 00000 n 
+0000042012 00000 n 
+0000042151 00000 n 
+0000044752 00000 n 
+0000044878 00000 n 
+0000045009 00000 n 
+0000045143 00000 n 
+0000045281 00000 n 
+0000045405 00000 n 
+0000045534 00000 n 
+0000045666 00000 n 
+0000045802 00000 n 
+0000045930 00000 n 
+0000046057 00000 n 
+0000046186 00000 n 
+0000046319 00000 n 
+0000046421 00000 n 
+0000046770 00000 n 
+0000046856 00000 n 
+trailer
+<<
+/Size 43
+/Root 42 0 R
+/Info 41 0 R
+/ID [ <97B2B25C87937F1190D33ADA31AFDEA5> <97B2B25C87937F1190D33ADA31AFDEA5> ]
+>>
+startxref
+46960
+%%EOF

@@ -35,6 +35,7 @@ export class CreateUserHandler
       command.email,
       passwordHash,
       command.age,
+      command.role as any, // Cast to UserRole
     );
 
     // Persistir

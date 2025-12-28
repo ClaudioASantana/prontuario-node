@@ -1,29 +1,33 @@
 import { DataSource } from 'typeorm';
 import { join } from 'path';
-import * as fs from 'fs';
-import { UserSchema } from './schemas/user.schema';
-import { RefreshTokenSchema } from './schemas/refresh-token.schema';
 
-const dbDir = join(process.cwd(), 'var', 'db');
-if (!fs.existsSync(dbDir)) {
-  fs.mkdirSync(dbDir, { recursive: true });
-}
-const dbFile = join(dbDir, 'prontuario.sqlite');
+import { UserSchema } from './schemas/user.schema';
+import { HealthPlanSchema } from './schemas/health-plan.schema';
+import { RefreshTokenSchema } from './schemas/refresh-token.schema';
+import { PatientSchema } from './schemas/patient.schema';
+import { PhysicianSchema } from './schemas/physician.schema';
+import { MedicalRecordSchema, AuditLogSchema } from './schemas/medical-record.schema';
+
+// Load env vars for CLI usage
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 export const AppDataSource = new DataSource({
-  type: 'sqlite',
-  database: dbFile,
-  entities: [UserSchema, RefreshTokenSchema],
+  type: 'postgres',
+  url: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }, 
+  entities: [
+    UserSchema, 
+    RefreshTokenSchema, 
+    HealthPlanSchema, 
+    PatientSchema, 
+    PhysicianSchema, 
+    MedicalRecordSchema, 
+    AuditLogSchema
+  ],
   migrations: [
-    join(
-      process.cwd(),
-      'src',
-      'infrastructure',
-      'database',
-      'migrations',
-      '*.ts',
-    ),
+    join(__dirname, 'migrations', '*.ts'),
   ],
   synchronize: false,
-  logging: false,
+  logging: false, // Enable logging for debugging
 });

@@ -4,6 +4,7 @@ export class UserDto {
   name: string;
   email: string;
   age: number;
+  role: string;
   createdAt: Date;
   updatedAt: Date;
 }

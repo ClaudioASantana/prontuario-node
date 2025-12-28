@@ -16,7 +16,7 @@ export class PasswordResetTokenSchema {
   @Column('text')
   token: string;
 
-  @Column('datetime')
+  @Column('timestamp')
   expiresAt: Date;
 
   @Column('boolean', { default: false })
@@ -25,6 +25,6 @@ export class PasswordResetTokenSchema {
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column('datetime', { nullable: true })
+  @Column('timestamp', { nullable: true })
   usedAt?: Date;
 }

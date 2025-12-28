@@ -46,7 +46,9 @@ export class LoginHandler
 
     // 3. Criar payload do token
 
-    const payload = new TokenPayload(user.id, user.email);
+    // 3. Criar payload do token
+
+    const payload = new TokenPayload(user.id, user.email, [user.role]);
 
     // 4. Gerar tokens
 

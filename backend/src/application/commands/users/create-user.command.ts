@@ -7,5 +7,6 @@ export class CreateUserCommand implements ICommand {
     public readonly email: string,
     public readonly password: string,
     public readonly age: number,
+    public readonly role: string = 'patient',
   ) {}
 }

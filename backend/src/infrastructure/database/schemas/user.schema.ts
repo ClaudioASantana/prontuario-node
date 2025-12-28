@@ -24,6 +24,9 @@ export class UserSchema {
   @Column('int')
   age: number;
 
+  @Column('varchar', { default: 'patient' })
+  role: string;
+
   @CreateDateColumn()
   createdAt: Date;
 

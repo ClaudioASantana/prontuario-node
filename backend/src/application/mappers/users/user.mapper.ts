@@ -11,6 +11,7 @@ export class UserMapper {
       raw.email,
       raw.passwordHash ?? '',
       raw.age,
+      raw.role,
     );
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     user.createdAt = raw.createdAt;
@@ -25,6 +26,7 @@ export class UserMapper {
       name: user.name,
       email: user.email,
       age: user.age,
+      role: user.role,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
     };
@@ -37,6 +39,7 @@ export class UserMapper {
       email: user.email,
       passwordHash: user.passwordHash,
       age: user.age,
+      role: user.role,
       createdAt: user.createdAt,
       updatedAt: user.updatedAt,
     };
