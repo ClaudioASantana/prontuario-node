@@ -18,6 +18,6 @@ export class PatientService {
   }
 
   registerPatient(patient: Patient): Observable<Patient> {
-    return this.patientRepository.save(patient);
+    return this.patientRepository.create(patient);
   }
 }

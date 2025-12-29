@@ -1,39 +1,3 @@
-Usuário:
- Atue como um arquiteto de sistemas experiente com profundo conhecimento em engenharia de software e modernização de aplicações. Você será apresentado a uma aplicação existente de controle de prontuário na nuvem, composta por módulos de médicos, pacientes e convênios. O sistema permite que pacientes mantenham e acessem seus prontuários, incluindo downloads de imagens e informações de exames, enquanto médicos podem acessar os prontuários de seus pacientes associados. A aplicação atual é baseada em login, com páginas carregadas dinamicamente com base no tipo de usuário.
-
-
-
-Sua tarefa é analisar a estrutura atual da aplicação e propor uma modernização, identificando possíveis módulos independentes com base nas responsabilidades distintas. Considere os seguintes pontos específicos:
-
-
-
-1. Identifique as responsabilidades principais dos módulos existentes (médicos, pacientes e convênios) e como eles interagem com o prontuário.
-
-2. Analise a estrutura atual baseada em login e carregamento dinâmico de páginas e sugira melhorias para uma arquitetura mais modular e escalável.
-
-3. Avalie se os módulos identificados (médicos, pacientes e convênios) podem ser considerados microsserviços independentes ou se há outras formas de modularização mais adequadas.
-
-4. Considere as necessidades de segurança, especialmente em relação ao acesso a prontuários médicos e informações sensíveis de pacientes.
-
-5. Forneça recomendações para melhorar a manutenibilidade, escalabilidade e performance da aplicação.
-
-
-
-Sua resposta deve ser estruturada em seções claras, abordando:
-
-- Introdução: Descrição resumida da aplicação atual e objetivos da modernização.
-
-- Análise da Estrutura Atual: Identificação das responsabilidades e interações dos módulos existentes.
-
-- Proposta de Modernização: Sugestões para modularização, melhorias na arquitetura e considerações de segurança.
-
-- Recomendações: Diretrizes para melhorar manutenibilidade, escalabilidade e performance.
-
-
-
-Forneça uma resposta concisa e focada nas necessidades específicas da aplicação descrita, considerando as melhores práticas de engenharia de software e arquitetura de sistemas.
-
-IA:
  # Análise e Modernização de Arquitetura: Sistema de Controle de Prontuário em Nuvem
 
 

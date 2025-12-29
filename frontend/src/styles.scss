@@ -1,3 +1,15 @@
+@import 'variables';
+
+// Bootstrap & Icons
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: $font-family-base;
+  background-color: $background-basic;
+  color: $text-basic;
+}

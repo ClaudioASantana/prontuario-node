@@ -23,6 +23,9 @@ async function bootstrap() {
     }),
   );
 
+  // Enable CORS for frontend integration
+  app.enableCors();
+
   const port = Number(process.env.PORT ?? 3000);
 
   // Configuração do Swagger

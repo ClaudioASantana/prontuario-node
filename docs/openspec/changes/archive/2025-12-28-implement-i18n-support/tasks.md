@@ -1,0 +1,6 @@
+- [x] Install `@ngx-translate/core` and `@ngx-translate/http-loader` <!-- id: 0 -->
+- [x] Create `en.json` and `pt-br.json` in `src/assets/i18n/` <!-- id: 1 -->
+- [x] Configure `TranslateModule` in `app.config.ts` <!-- id: 2 -->
+- [x] Implement `LanguageSelectorComponent` and add to header <!-- id: 3 -->
+- [x] Refactor `LoginComponent` and `SidebarComponent` to use `translate` pipe <!-- id: 4 -->
+- [ ] Archive OpenSpec change `implement-i18n-support` <!-- id: 5 -->

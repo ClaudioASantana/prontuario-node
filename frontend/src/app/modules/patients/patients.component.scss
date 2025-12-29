@@ -1,0 +1,48 @@
+
+.avatar-sm {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.table > :not(caption) > * > * {
+  padding: 1rem 1.25rem;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+
+  &.btn-sm {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+.btn-light-secondary {
+  color: #64748b;
+  background-color: #f1f5f9;
+  border-color: transparent;
+
+  &:hover {
+    color: #475569;
+    background-color: #e2e8f0;
+  }
+}
+
+.btn-light-danger {
+  color: #ef4444;
+  background-color: #fef2f2;
+  border-color: transparent;
+
+  &:hover {
+    color: #dc2626;
+    background-color: #fee2e2;
+  }
+}

@@ -11,7 +11,10 @@ export class Patient {
   address?: string;
   city?: string;
   state?: string;
-  
+  photoUrl?: string;
+  insurancePlan?: string;
+  insuranceNumber?: string;
+
   // Health Profile
   bloodType?: string;
   isOrganDonor: boolean;
@@ -36,7 +39,6 @@ export class Patient {
     this.cpf = cpf;
     this.birthDate = birthDate;
     this.gender = gender;
-    
     // Defaults matching legacy logic potential
     this.isOrganDonor = false;
     this.smoker = false;

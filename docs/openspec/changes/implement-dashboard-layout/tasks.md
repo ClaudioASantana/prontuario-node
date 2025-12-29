@@ -1,0 +1,5 @@
+- [x] Create `MainLayoutComponent` with Flexbox structure <!-- id: 4 -->
+- [x] Implement `HeaderComponent` (Logo + User Profile) <!-- id: 5 -->
+- [x] Implement `SidebarComponent` (Navigation Menu) <!-- id: 6 -->
+- [x] Implement `DashboardComponent` (Stats Cards + Chart placeholder) <!-- id: 7 -->
+- [x] Configure `app.routes.ts` to use `MainLayoutComponent` for authenticated routes <!-- id: 8 -->

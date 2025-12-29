@@ -21,7 +21,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
    * Validar payload do token
    * Este método é chamado automaticamente pelo Passport
    */
-  validate(payload: { userId: string; email?: string; roles?: string[] }): TokenPayload {
+  validate(payload: {
+    userId: string;
+    email?: string;
+    roles?: string[];
+    permissions?: string[];
+    organizationId?: string;
+    specialties?: string[];
+  }): TokenPayload {
     if (!payload || !payload.userId) {
       throw new UnauthorizedException('Token inválido');
     }
@@ -30,6 +37,9 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       userId: payload.userId,
       email: payload.email ?? '',
       roles: payload.roles ?? ([] as string[]),
+      permissions: payload.permissions ?? ([] as string[]),
+      organizationId: payload.organizationId,
+      specialties: payload.specialties,
     };
   }
 }

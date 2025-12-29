@@ -38,6 +38,15 @@ export class PatientSchema {
   @Column('varchar', { nullable: true })
   state: string | null;
 
+  @Column('varchar', { nullable: true })
+  photoUrl: string | null;
+
+  @Column('varchar', { nullable: true })
+  insurancePlan: string | null;
+
+  @Column('varchar', { nullable: true })
+  insuranceNumber: string | null;
+
   // Health Profile
   @Column('varchar', { nullable: true })
   bloodType: string | null;

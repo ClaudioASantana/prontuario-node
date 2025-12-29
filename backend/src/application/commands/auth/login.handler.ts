@@ -10,6 +10,7 @@ import { PasswordService } from 'src/infrastructure/services/password.service';
 import { RefreshTokenRepository } from 'src/infrastructure/database/persistence/refresh-token.repository';
 import { TokenPayload } from 'src/domain/entities/token-payload.entity';
 import { JwtConstants } from 'src/infrastructure/common/constants/jwt.constants';
+import * as physicianRepositoryInterface from 'src/domain/interfaces/repositories/physician.repository.interface';
 
 @CommandHandler(LoginCommand)
 export class LoginHandler
@@ -21,6 +22,8 @@ export class LoginHandler
     private readonly jwtService: JwtService,
     private readonly passwordService: PasswordService,
     private readonly refreshTokenRepository: RefreshTokenRepository,
+    @Inject(physicianRepositoryInterface.IPhysicianRepositoryToken)
+    private readonly physicianRepository: physicianRepositoryInterface.IPhysicianRepository,
   ) {}
 
   async execute(command: LoginCommand): Promise<AuthResponseDto> {
@@ -48,7 +51,22 @@ export class LoginHandler
 
     // 3. Criar payload do token
 
-    const payload = new TokenPayload(user.id, user.email, [user.role]);
+    let specialties: string[] = [];
+    if (user.role === 'PHYSICIAN') {
+      const physician = await this.physicianRepository.findByEmail(user.email);
+      if (physician && physician.specialty) {
+        specialties = [physician.specialty];
+      }
+    }
+
+    const payload = new TokenPayload(
+      user.id,
+      user.email,
+      [user.role],
+      [], // permissions
+      undefined, // organizationId
+      specialties,
+    );
 
     // 4. Gerar tokens
 

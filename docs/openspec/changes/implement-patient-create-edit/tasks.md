@@ -1,0 +1,9 @@
+- [ ] **Backend**: Update `Patient` entity with health and insurance fields <!-- id: 0 -->
+- [ ] **Backend**: Implement `PUT /patients/:id` logic (Command/Handler) <!-- id: 1 -->
+- [ ] **Backend**: Implement `POST /patients/:id/photo` logic (File Upload) <!-- id: 2 -->
+- [ ] **Frontend**: Update `Patient` model with new fields <!-- id: 3 -->
+- [ ] **Frontend**: Create `PatientFormComponent` UI (Bootstrap) <!-- id: 4 -->
+- [ ] **Frontend**: Implement Form Logic (ReactiveForms + Validation) <!-- id: 5 -->
+- [ ] **Frontend**: Add `PatientRepository.uploadPhoto` method <!-- id: 6 -->
+- [ ] **Frontend**: Register Routes (`/new`, `/:id/edit`) <!-- id: 7 -->
+- [ ] **Verification**: Test Create, Edit, and Photo Upload manually <!-- id: 8 -->

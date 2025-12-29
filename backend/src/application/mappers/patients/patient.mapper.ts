@@ -16,6 +16,9 @@ export class PatientMapper {
     patient.address = raw.address ?? undefined;
     patient.city = raw.city ?? undefined;
     patient.state = raw.state ?? undefined;
+    patient.photoUrl = raw.photoUrl ?? undefined;
+    patient.insurancePlan = raw.insurancePlan ?? undefined;
+    patient.insuranceNumber = raw.insuranceNumber ?? undefined;
     patient.bloodType = raw.bloodType ?? undefined;
     patient.isOrganDonor = raw.isOrganDonor;
     patient.smoker = raw.smoker;
@@ -43,6 +46,9 @@ export class PatientMapper {
       smoker: domain.smoker,
       alcoholConsumption: domain.alcoholConsumption,
       activityLevel: domain.activityLevel,
+      photoUrl: domain.photoUrl,
+      insurancePlan: domain.insurancePlan,
+      insuranceNumber: domain.insuranceNumber,
       createdAt: domain.createdAt,
       updatedAt: domain.updatedAt,
     };
@@ -60,6 +66,9 @@ export class PatientMapper {
     schema.address = domain.address ?? null;
     schema.city = domain.city ?? null;
     schema.state = domain.state ?? null;
+    schema.photoUrl = domain.photoUrl ?? null;
+    schema.insurancePlan = domain.insurancePlan ?? null;
+    schema.insuranceNumber = domain.insuranceNumber ?? null;
     schema.bloodType = domain.bloodType ?? null;
     schema.isOrganDonor = domain.isOrganDonor;
     schema.smoker = domain.smoker;

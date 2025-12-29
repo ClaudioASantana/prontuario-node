@@ -1,0 +1,6 @@
+- [ ] **Backend**: Populate `permissions`, `organizationId`, `specialties` in `LoginHandler` <!-- id: 0 -->
+- [ ] **Frontend**: Update `Patient` interface in `models/patient.model.ts` <!-- id: 1 -->
+- [ ] **Frontend**: Verify `HttpPatientRepository` endpoint URL (`/api/v1/patients`) <!-- id: 2 -->
+- [ ] **Frontend**: Create `PatientsComponent` with Table UI <!-- id: 3 -->
+- [ ] **Frontend**: Add `/patients` route in `app.routes.ts` <!-- id: 4 -->
+- [ ] **Frontend**: Translate new texts (Patients, Add Patient, Columns) in `pt-br.json` and `en.json` <!-- id: 5 -->

@@ -22,5 +22,8 @@ const queryHandlers = [GetPhysiciansHandler];
       useClass: PhysicianRepository,
     },
   ],
+  exports: [
+    IPhysicianRepositoryToken,
+  ],
 })
 export class PhysiciansModule {}

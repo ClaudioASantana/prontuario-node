@@ -1,0 +1,5 @@
+- [x] Setup global SCSS variables and typography matching `ngx-admin` <!-- id: 5 -->
+- [x] Create `AuthService` to handle backend integration <!-- id: 1 -->
+- [x] Implement `LoginComponent` UI (HTML/SCSS) matching the design <!-- id: 2 -->
+- [x] Connect Login form to `AuthService` and handle JWT storage <!-- id: 3 -->
+- [x] Implement `PublicGuard` and `AuthGuard` for route protection <!-- id: 4 -->

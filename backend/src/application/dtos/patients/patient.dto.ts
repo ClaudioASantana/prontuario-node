@@ -13,6 +13,9 @@ export class CreatePatientDto {
   smoker?: boolean;
   alcoholConsumption?: boolean;
   activityLevel?: number;
+  photoUrl?: string;
+  insurancePlan?: string;
+  insuranceNumber?: string;
 }
 
 export class PatientDto {
@@ -31,6 +34,9 @@ export class PatientDto {
   smoker: boolean;
   alcoholConsumption: boolean;
   activityLevel: number;
+  photoUrl?: string;
+  insurancePlan?: string;
+  insuranceNumber?: string;
   createdAt: Date;
   updatedAt: Date;
 }

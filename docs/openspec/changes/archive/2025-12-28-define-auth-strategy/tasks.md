@@ -1,0 +1,4 @@
+- [x] Audit current `src/modules/auth` implementation against `Usuário_.txt` requirements <!-- id: 0 -->
+- [x] Define precise JWT Payload Interface in shared types <!-- id: 1 -->
+- [x] Implement/Verify Refresh Token rotation mechanism <!-- id: 2 -->
+- [x] Implement/Verify Role Guards for Physicians, Patients, and Health Plans <!-- id: 3 -->

@@ -53,7 +53,15 @@ export class RefreshTokenHandler
     }
 
     // 4. Gerar novo access token
-    const tokenPayload = new TokenPayload(user.id, user.email);
+    // 4. Gerar novo access token
+    const tokenPayload = new TokenPayload(
+      user.id,
+      user.email,
+      [user.role],
+      [], // permissions
+      undefined, // organizationId
+      [], // specialties
+    );
     const newAccessToken = this.jwtService.generateAccessToken(tokenPayload);
 
     // 5. Revogar refresh token antigo

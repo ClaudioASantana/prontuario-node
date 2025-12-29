@@ -17,6 +17,7 @@ import { PasswordResetTokenRepository } from 'src/infrastructure/database/persis
 import { JwtStrategy } from 'src/application/strategies/jwt.strategy';
 import { RefreshJwtStrategy } from 'src/application/strategies/refresh-jwt.strategy';
 import { UsersModule } from './users.module';
+import { PhysiciansModule } from './physicians.module';
 import { JwtService } from 'src/application/services/jwt.service';
 import { RequestPasswordResetHandler } from 'src/application/commands/auth/request-password-reset.handler';
 import { ResetPasswordHandler } from 'src/application/commands/auth/reset-password.handler';
@@ -43,6 +44,7 @@ const queryHandlers = [GetLatestPasswordResetTokenHandler];
     }),
     CqrsModule,
     UsersModule,
+    PhysiciansModule,
   ],
   controllers: [AuthController],
   providers: [

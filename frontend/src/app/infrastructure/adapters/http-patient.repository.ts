@@ -8,7 +8,7 @@ import { Patient } from '../../core/domain/models/patient.model';
   providedIn: 'root'
 })
 export class HttpPatientRepository extends PatientRepository {
-  private apiUrl = 'http://localhost:3000/patients'; // TODO: Move to environment config
+  private apiUrl = 'http://localhost:3000/api/v1/patients'; // TODO: Move to environment config
 
   constructor(private http: HttpClient) {
     super();
@@ -18,11 +18,27 @@ export class HttpPatientRepository extends PatientRepository {
     return this.http.get<Patient[]>(this.apiUrl);
   }
 
-  findById(id: string): Observable<Patient | undefined> {
+  findById(id: string): Observable<Patient> {
     return this.http.get<Patient>(`${this.apiUrl}/${id}`);
   }
 
-  save(patient: Patient): Observable<Patient> {
+  create(patient: Patient): Observable<Patient> {
     return this.http.post<Patient>(this.apiUrl, patient);
+  }
+
+  update(patient: Patient): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${patient.id}`, patient);
+  }
+
+  uploadPhoto(id: string, file: File): Observable<void> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post<void>(`${this.apiUrl}/${id}/photo`, formData);
+  }
+
+  // Deprecated usage from existing code if any, but clean up is better.
+  // Previous save() was likely used as create.
+  save(patient: Patient): Observable<Patient> {
+    return this.create(patient);
   }
 }

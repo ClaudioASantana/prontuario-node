@@ -1,0 +1,90 @@
+{
+  "LOGIN": {
+    "TITLE": "Welcome Back!",
+    "SUBTITLE": "Sign in to your account",
+    "EMAIL": "Email Address",
+    "PASSWORD": "Password",
+    "FORGOT_PASSWORD": "Forgot Password?",
+    "BUTTON": "Log In",
+    "PLACEHOLDER": {
+      "EMAIL": "example@email.com",
+      "PASSWORD": "........"
+    },
+    "OR_CONTINUE": "Or continue with",
+    "COPYRIGHT": "Copyright © 2025 Prontuário. All rights reserved."
+  },
+  "MENU": {
+    "HEADER": "MENU",
+    "DASHBOARD": "Dashboard",
+    "PATIENTS": "Patients",
+    "APPOINTMENTS": "Appointments",
+    "SETTINGS": "Settings"
+  },
+  "HEADER": {
+    "LOGOUT": "Logout",
+    "PROFILE": "Profile"
+  },
+  "DASHBOARD": {
+    "TITLE": "Dashboard",
+    "BREADCRUMB": "Home / Dashboard",
+    "STATS": {
+      "PATIENTS": "Total Patients",
+      "APPOINTMENTS": "Appointments Today",
+      "TASKS": "Pending Tasks",
+      "HINT_PATIENTS": "+5 this week",
+      "HINT_APPOINTMENTS": "5 remaining",
+      "HINT_TASKS": "Due today"
+    },
+    "ACTIVITY": {
+      "TITLE": "Recent Activity"
+    },
+    "CHART": {
+      "TITLE": "Appointment Trends (Last 30 Days)"
+    }
+  },
+  "PATIENTS": {
+    "TITLE": "Patients",
+    "ADD_NEW": "Add Patient",
+    "NO_DATA": "No patients found",
+    "COLUMNS": {
+      "NAME": "Name",
+      "CONTACT": "Contact",
+      "GENDER": "Gender",
+      "ACTIONS": "Actions"
+    },
+    "FORM": {
+      "ADD_TITLE": "Add New Patient",
+      "EDIT_TITLE": "Edit Patient",
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "CPF": "CPF",
+      "BIRTH_DATE": "Date of Birth",
+      "GENDER": "Gender",
+      "PHONE": "Phone",
+      "ADDRESS": "Address",
+      "CITY": "City",
+      "STATE": "State",
+      "CONTACT_ADDRESS": "Contact & Address",
+      "HEALTH_INSURANCE": "Health & Insurance",
+      "BLOOD_TYPE": "Blood Type",
+      "ACTIVITY_LEVEL": "Activity Level",
+      "INSURANCE_PLAN": "Insurance Plan",
+      "INSURANCE_NUMBER": "Insurance Number",
+      "ORGAN_DONOR": "Organ Donor",
+      "SMOKER": "Smoker",
+      "ALCOHOL": "Alcohol Consumption",
+      "CANCEL": "Cancel",
+      "SAVE": "Save Changes",
+      "CREATE": "Create Patient",
+      "SELECT": "Select",
+      "MALE": "Male",
+      "FEMALE": "Female",
+      "OTHER": "Other",
+      "LOW": "Low",
+      "MEDIUM": "Medium",
+      "HIGH": "High",
+      "CHOOSE_FILE": "Choose photo",
+      "NO_FILE_SELECTED": "No photo selected"
+    }
+  }
+}

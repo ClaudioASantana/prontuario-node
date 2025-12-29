@@ -6,6 +6,7 @@ export interface IPhysicianRepository {
   create(physician: Physician): Promise<void>;
   findById(id: string): Promise<Physician | null>;
   findByCrm(crm: string): Promise<Physician | null>;
+  findByEmail(email: string): Promise<Physician | null>;
   findAll(): Promise<Physician[]>;
   update(physician: Physician): Promise<void>;
 }

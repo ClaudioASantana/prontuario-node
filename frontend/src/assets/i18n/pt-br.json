@@ -1,0 +1,90 @@
+{
+  "LOGIN": {
+    "TITLE": "Bem-vindo de volta!",
+    "SUBTITLE": "Entre na sua conta",
+    "EMAIL": "Endereço de Email",
+    "PASSWORD": "Senha",
+    "FORGOT_PASSWORD": "Esqueceu a senha?",
+    "BUTTON": "Entrar",
+    "PLACEHOLDER": {
+      "EMAIL": "exemplo@email.com",
+      "PASSWORD": "........"
+    },
+    "OR_CONTINUE": "Ou continue com",
+    "COPYRIGHT": "Copyright © 2025 Prontuário. Todos os direitos reservados."
+  },
+  "MENU": {
+    "HEADER": "MENU",
+    "DASHBOARD": "Painel",
+    "PATIENTS": "Pacientes",
+    "APPOINTMENTS": "Consultas",
+    "SETTINGS": "Configurações"
+  },
+  "HEADER": {
+    "LOGOUT": "Sair",
+    "PROFILE": "Perfil"
+  },
+  "DASHBOARD": {
+    "TITLE": "Painel de Controle",
+    "BREADCRUMB": "Início / Painel",
+    "STATS": {
+      "PATIENTS": "Total de Pacientes",
+      "APPOINTMENTS": "Consultas Hoje",
+      "TASKS": "Tarefas Pendentes",
+      "HINT_PATIENTS": "+5 esta semana",
+      "HINT_APPOINTMENTS": "5 restantes",
+      "HINT_TASKS": "Vence hoje"
+    },
+    "ACTIVITY": {
+      "TITLE": "Atividade Recente"
+    },
+    "CHART": {
+      "TITLE": "Tendência de Consultas (Últimos 30 dias)"
+    }
+  },
+  "PATIENTS": {
+    "TITLE": "Pacientes",
+    "ADD_NEW": "Novo Paciente",
+    "NO_DATA": "Nenhum paciente encontrado",
+    "COLUMNS": {
+      "NAME": "Nome",
+      "CONTACT": "Contato",
+      "GENDER": "Gênero",
+      "ACTIONS": "Ações"
+    },
+    "FORM": {
+      "ADD_TITLE": "Adicionar Novo Paciente",
+      "EDIT_TITLE": "Editar Paciente",
+      "NAME": "Nome",
+      "EMAIL": "Email",
+      "CPF": "CPF",
+      "BIRTH_DATE": "Data de Nascimento",
+      "GENDER": "Gênero",
+      "PHONE": "Telefone",
+      "ADDRESS": "Endereço",
+      "CITY": "Cidade",
+      "STATE": "Estado",
+      "CONTACT_ADDRESS": "Contato e Endereço",
+      "HEALTH_INSURANCE": "Saúde e Convênio",
+      "BLOOD_TYPE": "Tipo Sanguíneo",
+      "ACTIVITY_LEVEL": "Nível de Atividade",
+      "INSURANCE_PLAN": "Plano de Saúde",
+      "INSURANCE_NUMBER": "Número da Carteirinha",
+      "ORGAN_DONOR": "Doador de Órgãos",
+      "SMOKER": "Fumante",
+      "ALCOHOL": "Consome Álcool",
+      "CANCEL": "Cancelar",
+      "SAVE": "Salvar Alterações",
+      "CREATE": "Criar Paciente",
+      "SELECT": "Selecione",
+      "MALE": "Masculino",
+      "FEMALE": "Feminino",
+      "OTHER": "Outro",
+      "LOW": "Baixo",
+      "MEDIUM": "Médio",
+      "HIGH": "Alto",
+      "CHOOSE_FILE": "Escolher foto",
+      "NO_FILE_SELECTED": "Nenhuma foto selecionada"
+    }
+  }
+}

@@ -1,0 +1,156 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">{{ isEditMode() ? ('PATIENTS.FORM.EDIT_TITLE' | translate) : ('PATIENTS.FORM.ADD_TITLE' | translate) }}</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+          <!-- Photo & Basic Info -->
+          <div class="row mb-4">
+            <div class="col-md-3 text-center">
+              <div class="mb-3">
+                <div class="avatar-preview mb-2">
+                  <img [src]="photoPreview() || 'assets/images/user/avatar-placeholder.png'"
+                       class="img-thumbnail rounded-circle"
+                       style="width: 150px; height: 150px; object-fit: cover;"
+                       alt="Patient Photo">
+                </div>
+                <div class="d-grid">
+                  <input type="file" #fileInput (change)="onFileSelected($event)" class="d-none" accept="image/*">
+                  <button type="button" class="btn btn-outline-primary btn-sm" (click)="fileInput.click()">
+                    <i class="feather icon-camera me-1"></i>
+                    {{ 'PATIENTS.FORM.CHOOSE_FILE' | translate }}
+                  </button>
+                  <small class="text-muted mt-1 d-block text-truncate">
+                    {{ selectedFile ? selectedFile.name : ('PATIENTS.FORM.NO_FILE_SELECTED' | translate) }}
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">{{ 'PATIENTS.FORM.NAME' | translate }} *</label>
+                  <input type="text" class="form-control" formControlName="name"
+                         [class.is-invalid]="form.get('name')?.invalid && form.get('name')?.touched">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">{{ 'PATIENTS.FORM.EMAIL' | translate }} *</label>
+                  <input type="email" class="form-control" formControlName="email">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">{{ 'PATIENTS.FORM.CPF' | translate }} *</label>
+                  <input type="text" class="form-control" formControlName="cpf">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">{{ 'PATIENTS.FORM.BIRTH_DATE' | translate }} *</label>
+                  <input type="date" class="form-control" formControlName="birthDate">
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label class="form-label">{{ 'PATIENTS.FORM.GENDER' | translate }} *</label>
+                  <select class="form-select" formControlName="gender">
+                    <option value="Male">{{ 'PATIENTS.FORM.MALE' | translate }}</option>
+                    <option value="Female">{{ 'PATIENTS.FORM.FEMALE' | translate }}</option>
+                    <option value="Other">{{ 'PATIENTS.FORM.OTHER' | translate }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- Contact & Address -->
+          <h6 class="mb-3 text-primary">{{ 'PATIENTS.FORM.CONTACT_ADDRESS' | translate }}</h6>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.PHONE' | translate }}</label>
+              <input type="text" class="form-control" formControlName="phone">
+            </div>
+            <div class="col-md-8 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.ADDRESS' | translate }}</label>
+              <input type="text" class="form-control" formControlName="address">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.CITY' | translate }}</label>
+              <input type="text" class="form-control" formControlName="city">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.STATE' | translate }}</label>
+              <input type="text" class="form-control" formControlName="state">
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <!-- Health & Insurance -->
+          <h6 class="mb-3 text-primary">{{ 'PATIENTS.FORM.HEALTH_INSURANCE' | translate }}</h6>
+          <div class="row">
+            <div class="col-md-3 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.BLOOD_TYPE' | translate }}</label>
+              <select class="form-select" formControlName="bloodType">
+                <option value="">{{ 'PATIENTS.FORM.SELECT' | translate }}</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.ACTIVITY_LEVEL' | translate }}</label>
+              <select class="form-select" formControlName="activityLevel">
+                <option [value]="0">{{ 'PATIENTS.FORM.LOW' | translate }}</option>
+                <option [value]="1">{{ 'PATIENTS.FORM.MEDIUM' | translate }}</option>
+                <option [value]="2">{{ 'PATIENTS.FORM.HIGH' | translate }}</option>
+              </select>
+            </div>
+             <div class="col-md-6 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.INSURANCE_PLAN' | translate }}</label>
+              <input type="text" class="form-control" formControlName="insurancePlan">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">{{ 'PATIENTS.FORM.INSURANCE_NUMBER' | translate }}</label>
+              <input type="text" class="form-control" formControlName="insuranceNumber">
+            </div>
+          </div>
+
+          <div class="row mb-3">
+             <div class="col-md-3">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" formControlName="isOrganDonor">
+                  <label class="form-check-label">{{ 'PATIENTS.FORM.ORGAN_DONOR' | translate }}</label>
+                </div>
+             </div>
+             <div class="col-md-3">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" formControlName="smoker">
+                  <label class="form-check-label">{{ 'PATIENTS.FORM.SMOKER' | translate }}</label>
+                </div>
+             </div>
+             <div class="col-md-3">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" formControlName="alcoholConsumption">
+                  <label class="form-check-label">{{ 'PATIENTS.FORM.ALCOHOL' | translate }}</label>
+                </div>
+             </div>
+          </div>
+
+          <div class="d-flex justify-content-end gap-2 mt-4">
+            <button type="button" class="btn btn-light" routerLink="/patients">{{ 'PATIENTS.FORM.CANCEL' | translate }}</button>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+              {{ isEditMode() ? ('PATIENTS.FORM.SAVE' | translate) : ('PATIENTS.FORM.CREATE' | translate) }}
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
