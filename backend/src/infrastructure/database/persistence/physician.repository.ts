@@ -30,6 +30,12 @@ export class PhysicianRepository implements IPhysicianRepository {
     return PhysicianMapper.toDomain(schema);
   }
 
+  async findByEmail(email: string): Promise<Physician | null> {
+    const schema = await this.repository.findOne({ where: { email } });
+    if (!schema) return null;
+    return PhysicianMapper.toDomain(schema);
+  }
+
   async findAll(): Promise<Physician[]> {
     const schemas = await this.repository.find();
     return schemas.map((schema) => PhysicianMapper.toDomain(schema));

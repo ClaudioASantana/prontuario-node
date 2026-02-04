@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="card-title mb-0">{{ 'HEALTH_PLANS.TITLE' | translate }}</h5>
+        <button class="btn btn-primary btn-sm" routerLink="new">
+          <i class="feather icon-plus me-1"></i>
+          {{ 'HEALTH_PLANS.ADD_NEW' | translate }}
+        </button>
+      </div>
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover mb-0">
+            <thead class="bg-light">
+              <tr>
+                <th class="border-top-0">{{ 'HEALTH_PLANS.COLUMNS.NAME' | translate }}</th>
+                <th class="border-top-0">{{ 'HEALTH_PLANS.COLUMNS.CODE' | translate }}</th>
+                <th class="border-top-0">{{ 'HEALTH_PLANS.COLUMNS.TYPE' | translate }}</th>
+                <th class="border-top-0">{{ 'HEALTH_PLANS.COLUMNS.STATUS' | translate }}</th>
+                <th class="border-top-0 text-center">{{ 'HEALTH_PLANS.COLUMNS.ACTIONS' | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (plan of healthPlans(); track plan.id) {
+                <tr>
+                  <td class="align-middle">
+                    <h6 class="mb-0">{{ plan.name }}</h6>
+                    <small class="text-muted" *ngIf="plan.commercialName">{{ plan.commercialName }}</small>
+                  </td>
+                  <td class="align-middle">{{ plan.code }}</td>
+                  <td class="align-middle">
+                    <span class="badge bg-light text-dark border">{{ plan.type }}</span>
+                  </td>
+                  <td class="align-middle">
+                    <span class="badge" [ngClass]="plan.active ? 'bg-success' : 'bg-secondary'">{{ plan.active ? 'Active' : 'Inactive' }}</span>
+                  </td>
+                  <td class="align-middle text-center">
+                    <button class="btn btn-icon btn-sm btn-light-secondary me-1" [routerLink]="[plan.id, 'edit']">
+                      <i class="feather icon-edit-2"></i>
+                    </button>
+                    <button class="btn btn-icon btn-sm btn-light-danger">
+                      <i class="feather icon-trash-2"></i>
+                    </button>
+                  </td>
+                </tr>
+              } @empty {
+                <tr>
+                  <td colspan="5" class="text-center py-5">
+                    <i class="feather icon-shield display-6 text-muted mb-3 d-block"></i>
+                    <p class="text-muted mb-0">{{ 'HEALTH_PLANS.NO_DATA' | translate }}</p>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

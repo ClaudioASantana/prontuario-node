@@ -6,6 +6,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { routes } from './app.routes';
 import { PatientRepository } from './core/domain/ports/patient.repository';
 import { HttpPatientRepository } from './infrastructure/adapters/http-patient.repository';
+import { HealthPlanRepository } from './core/domain/ports/health-plan.repository';
+import { HttpHealthPlanRepository } from './infrastructure/adapters/http-health-plan.repository';
 
 // Custom Loader to avoid dependency issues
 export function createTranslateLoader(http: HttpClient) {
@@ -27,6 +29,7 @@ export const appConfig: ApplicationConfig = {
       },
       defaultLanguage: 'pt-br'
     })),
-    { provide: PatientRepository, useClass: HttpPatientRepository }
+    { provide: PatientRepository, useClass: HttpPatientRepository },
+    { provide: HealthPlanRepository, useClass: HttpHealthPlanRepository }
   ]
 };

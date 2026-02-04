@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, tap, BehaviorSubject } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 import { LoginDto, AuthResponseDto } from './models/auth.models';
 
 @Injectable({
@@ -11,18 +12,27 @@ export class AuthService {
   private tokenKey = 'access_token';
   private refreshTokenKey = 'refresh_token';
 
-  constructor(private http: HttpClient) {}
+  private currentUserRoleSubject = new BehaviorSubject<string | null>(null);
+  public currentUserRole$ = this.currentUserRoleSubject.asObservable();
+
+  constructor(private http: HttpClient) {
+    this.loadUserRoleFromToken();
+  }
 
   login(credentials: LoginDto): Observable<AuthResponseDto> {
     return this.http.post<AuthResponseDto>(`${this.apiUrl}/login`, credentials)
       .pipe(
-        tap(response => this.saveTokens(response))
+        tap(response => {
+          this.saveTokens(response);
+          this.decodeAndNotify(response.accessToken);
+        })
       );
   }
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
     localStorage.removeItem(this.refreshTokenKey);
+    this.currentUserRoleSubject.next(null);
   }
 
   isAuthenticated(): boolean {
@@ -36,5 +46,24 @@ export class AuthService {
   private saveTokens(response: AuthResponseDto): void {
     localStorage.setItem(this.tokenKey, response.accessToken);
     localStorage.setItem(this.refreshTokenKey, response.refreshToken);
+  }
+
+  private loadUserRoleFromToken(): void {
+    const token = this.getToken();
+    if (token) {
+      this.decodeAndNotify(token);
+    }
+  }
+
+  private decodeAndNotify(token: string): void {
+    try {
+      const decoded: any = jwtDecode(token);
+      // Backend TokenPayload: roles: string[]
+      const role = decoded.roles && decoded.roles.length > 0 ? decoded.roles[0] : null;
+      this.currentUserRoleSubject.next(role);
+    } catch (error) {
+      console.error('Error decoding token', error);
+      this.currentUserRoleSubject.next(null);
+    }
   }
 }

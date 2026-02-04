@@ -7,9 +7,13 @@ import { CreatePatientCommand } from 'src/application/commands/patients/create-p
 import { UpdatePatientCommand } from 'src/application/commands/patients/update-patient.command';
 import { UploadPatientPhotoCommand } from 'src/application/commands/patients/upload-photos.command';
 import { GetPatientsQuery } from 'src/application/queries/patients/get-patients.handler'; // Consolidated file for simplicity
-import { JwtAuthGuard } from 'src/application/guards/jwt-auth.guard';
+import { JwtGuard } from 'src/infrastructure/common/guards/jwt.guard';
+import { RolesGuard } from 'src/infrastructure/common/guards/roles.guard';
+import { Roles } from 'src/infrastructure/common/decorators/roles.decorator';
 
 @Controller('patients')
+@UseGuards(JwtGuard, RolesGuard)
+@Roles('admin', 'physician', 'patient')
 export class PatientsController {
   constructor(
     private readonly commandBus: CommandBus,
@@ -17,7 +21,6 @@ export class PatientsController {
   ) {}
 
   @Post()
-  @UseGuards(JwtAuthGuard)
   async create(@Body() dto: CreatePatientDto) {
     return this.commandBus.execute(
       new CreatePatientCommand(
@@ -40,19 +43,16 @@ export class PatientsController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
   async findAll() {
     return this.queryBus.execute(new GetPatientsQuery());
   }
 
   @Put(':id')
-  @UseGuards(JwtAuthGuard)
   async update(@Param('id') id: string, @Body() dto: UpdatePatientDto) {
     return this.commandBus.execute(new UpdatePatientCommand(id, dto));
   }
 
   @Post(':id/photo')
-  @UseGuards(JwtAuthGuard)
   @UseInterceptors(FileInterceptor('file'))
   async uploadPhoto(
     @Param('id') id: string,

@@ -17,6 +17,7 @@
     "HEADER": "MENU",
     "DASHBOARD": "Painel",
     "PATIENTS": "Pacientes",
+    "HEALTH_PLANS": "Convênios",
     "APPOINTMENTS": "Consultas",
     "SETTINGS": "Configurações"
   },
@@ -84,7 +85,58 @@
       "MEDIUM": "Médio",
       "HIGH": "Alto",
       "CHOOSE_FILE": "Escolher foto",
-      "NO_FILE_SELECTED": "Nenhuma foto selecionada"
+      "NO_FILE_SELECTED": "Nenhum arquivo selecionado"
     }
+  },
+  "HEALTH_PLANS": {
+    "TITLE": "Convênios",
+    "ADD_NEW": "Adicionar Novo",
+    "NO_DATA": "Nenhum convênio cadastrado",
+    "COLUMNS": {
+      "NAME": "Nome",
+      "CODE": "Código ANS",
+      "TYPE": "Tipo",
+      "STATUS": "Status",
+      "ACTIONS": "Ações"
+    },
+    "FORM": {
+      "ADD_TITLE": "Adicionar Convênio",
+      "EDIT_TITLE": "Editar Convênio",
+      "NAME": "Nome",
+      "CODE": "Código ANS",
+      "COMMERCIAL_NAME": "Nome Comercial",
+      "TYPE": "Tipo",
+      "ACTIVE": "Ativo",
+      "CANCEL": "Cancelar",
+      "SAVE": "Salvar",
+      "CREATE": "Criar"
+    }
+  },
+  "USERS": {
+    "LIST": {
+      "TITLE": "Buscar Usuários",
+      "ADD_NEW": "Novo Usuário",
+      "SEARCH_PLACEHOLDER": "Buscar usuários...",
+      "NO_RESULTS": "Nenhum usuário encontrado.",
+      "NAME": "Nome",
+      "EMAIL": "Email",
+      "ROLE": "Perfil",
+      "ACTIONS": "Ações"
+    },
+    "EDIT": {
+      "TITLE": "Editar Usuário"
+    },
+    "FORM": {
+      "NAME": "Nome",
+      "EMAIL": "Email",
+      "ROLE": "Perfil",
+      "READONLY_HINT": "Este campo não pode ser alterado."
+    }
+  },
+  "BUTTONS": {
+    "EDIT": "Editar",
+    "DELETE": "Excluir",
+    "CANCEL": "Cancelar",
+    "SAVE": "Salvar"
   }
 }

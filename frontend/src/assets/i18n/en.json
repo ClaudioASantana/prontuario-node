@@ -17,6 +17,7 @@
     "HEADER": "MENU",
     "DASHBOARD": "Dashboard",
     "PATIENTS": "Patients",
+    "HEALTH_PLANS": "Health Plans",
     "APPOINTMENTS": "Appointments",
     "SETTINGS": "Settings"
   },
@@ -85,6 +86,53 @@
       "HIGH": "High",
       "CHOOSE_FILE": "Choose photo",
       "NO_FILE_SELECTED": "No photo selected"
+    }
+  },
+  "HEALTH_PLANS": {
+    "TITLE": "Health Plans",
+    "ADD_NEW": "Add New",
+    "NO_DATA": "No health plans found",
+    "COLUMNS": {
+      "NAME": "Name",
+      "CODE": "ANS Code",
+      "TYPE": "Type",
+      "STATUS": "Status",
+      "ACTIONS": "Actions"
+    },
+    "FORM": {
+      "ADD_TITLE": "Add Health Plan",
+      "EDIT_TITLE": "Edit Health Plan",
+      "NAME": "Name",
+      "CODE": "ANS Code",
+      "COMMERCIAL_NAME": "Commercial Name",
+      "TYPE": "Type",
+      "ACTIVE": "Active",
+      "CANCEL": "Cancel",
+      "SAVE": "Save",
+      "CREATE": "Create"
+    },
+    "DELETE_CONFIRM_TITLE": "Confirm Deletion",
+    "DELETE_CONFIRM_MESSAGE": "Are you sure you want to delete health plan {{name}}?"
+  },
+  "USERS": {
+    "LIST": {
+      "TITLE": "Search Users",
+      "ADD_NEW": "New User",
+      "SEARCH_PLACEHOLDER": "Search users...",
+      "NO_RESULTS": "No users found.",
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "ROLE": "Role",
+      "ACTIONS": "Actions"
+    },
+    "EDIT": {
+      "TITLE": "Edit User"
+    },
+    "FORM": {
+      "NAME": "Name",
+      "EMAIL": "Email",
+      "ROLE": "Role",
+      "READONLY_HINT": "This field cannot be changed."
     }
   }
 }

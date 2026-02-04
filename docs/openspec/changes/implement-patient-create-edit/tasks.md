@@ -6,4 +6,4 @@
 - [ ] **Frontend**: Implement Form Logic (ReactiveForms + Validation) <!-- id: 5 -->
 - [ ] **Frontend**: Add `PatientRepository.uploadPhoto` method <!-- id: 6 -->
 - [ ] **Frontend**: Register Routes (`/new`, `/:id/edit`) <!-- id: 7 -->
-- [ ] **Verification**: Test Create, Edit, and Photo Upload manually <!-- id: 8 -->
+- [x] **Verification**: Test Create, Edit, and Photo Upload manually <!-- id: 58 -->

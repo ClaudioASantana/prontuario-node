@@ -3,13 +3,12 @@ import { join } from 'path';
 
 export function createTypeOrmConfig(): TypeOrmModuleOptions {
   return {
-    type: 'postgres',
-    url: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false },
+    type: 'sqlite',
+    database: process.env.DATABASE_FILE || 'prontuario.db',
     autoLoadEntities: true,
-    synchronize: false,
-    migrations: [join(process.cwd(), 'dist', 'infrastructure', 'database', 'migrations', '*.js')],
-    migrationsRun: true,
+    synchronize: true,
+    migrations: [], // Disable migrations for initial SQLite setup
+    migrationsRun: false,
     logging: true,
   };
 }

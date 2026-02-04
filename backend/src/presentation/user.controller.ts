@@ -34,6 +34,12 @@ import { UserMapper } from 'src/application/mappers/users/user.mapper';
 import { GetUserQuery } from 'src/application/queries/users/get-user.query';
 import { GetUsersQuery } from 'src/application/queries/users/get-users.query';
 import { User } from 'src/domain/entities/user.entity';
+import { Put, UseGuards } from '@nestjs/common';
+import { JwtGuard } from 'src/infrastructure/common/guards/jwt.guard';
+import { RolesGuard } from 'src/infrastructure/common/guards/roles.guard';
+import { Roles } from 'src/infrastructure/common/decorators/roles.decorator';
+import { UpdateUserDto } from 'src/application/dtos/users/update-user.dto';
+import { UpdateUserCommand } from 'src/application/commands/users/update-user.command';
 import { ErrorResponseDto } from 'src/application/dtos/common/error-response.dto';
 
 @ApiTags('Users')
@@ -227,5 +233,15 @@ export class UserController {
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     return UserMapper.toDto(user);
+  }
+
+  @Put(':id')
+  @UseGuards(JwtGuard, RolesGuard)
+  @Roles('admin')
+  @ApiOperation({ summary: 'Atualizar usuário (Admin)', description: 'Atualizar dados de um usuário' })
+  @ApiOkResponse({ description: 'Usuário atualizado com sucesso' })
+  async update(@Param('id') id: string, @Body() dto: UpdateUserDto): Promise<void> {
+    const command = new UpdateUserCommand(id, dto.name, dto.email, dto.role);
+    await this.commandBus.execute(command);
   }
 }

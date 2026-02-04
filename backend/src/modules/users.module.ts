@@ -11,7 +11,9 @@ import { IUserRepositoryToken } from 'src/domain/interfaces/repositories/user.re
 import { UserRepository } from 'src/infrastructure/database/persistence/user.repository';
 import { PasswordService } from 'src/infrastructure/services/password.service';
 
-const commandHandlers = [CreateUserHandler];
+import { UpdateUserHandler } from 'src/application/commands/users/update-user.handler';
+
+const commandHandlers = [CreateUserHandler, UpdateUserHandler];
 const queryHandlers = [GetUserHandler, GetUsersHandler];
 
 @Module({

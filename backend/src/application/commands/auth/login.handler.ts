@@ -11,6 +11,7 @@ import { RefreshTokenRepository } from 'src/infrastructure/database/persistence/
 import { TokenPayload } from 'src/domain/entities/token-payload.entity';
 import { JwtConstants } from 'src/infrastructure/common/constants/jwt.constants';
 import * as physicianRepositoryInterface from 'src/domain/interfaces/repositories/physician.repository.interface';
+import { UserRole } from 'src/domain/enums/user-role.enum';
 
 @CommandHandler(LoginCommand)
 export class LoginHandler
@@ -52,7 +53,7 @@ export class LoginHandler
     // 3. Criar payload do token
 
     let specialties: string[] = [];
-    if (user.role === 'PHYSICIAN') {
+    if (user.role === UserRole.PHYSICIAN) {
       const physician = await this.physicianRepository.findByEmail(user.email);
       if (physician && physician.specialty) {
         specialties = [physician.specialty];

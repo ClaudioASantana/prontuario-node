@@ -19,7 +19,7 @@ export class RefreshTokenSchema {
   @Column('text')
   token: string;
 
-  @Column('timestamp')
+  @Column('datetime')
   expiresAt: Date;
 
   @Column('boolean', { default: false })

@@ -21,7 +21,7 @@ export class MedicalRecordSchema {
   @Column('varchar')
   physicianId: string;
 
-  @Column('timestamp')
+  @Column('datetime')
   date: Date;
 
   @Column('text')
@@ -69,7 +69,7 @@ export class AuditLogSchema {
   @Column('varchar')
   userId: string;
 
-  @Column('timestamp')
+  @Column('datetime')
   timestamp: Date;
 
   @Column('text', { nullable: true })

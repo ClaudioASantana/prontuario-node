@@ -58,7 +58,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
     .content-body {
       flex: 1;
       overflow-y: auto;
-      padding: 1.5rem; /* 24px */
+      padding: 0; /* Remove global padding */
     }
   `]
 })

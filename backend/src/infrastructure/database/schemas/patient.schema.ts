@@ -20,7 +20,7 @@ export class PatientSchema {
   @Column('varchar', { unique: true })
   cpf: string;
 
-  @Column('timestamp')
+  @Column('datetime')
   birthDate: Date;
 
   @Column('varchar')
