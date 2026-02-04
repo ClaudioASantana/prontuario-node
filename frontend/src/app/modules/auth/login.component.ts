@@ -6,10 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from '../../auth.service';
 
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, TranslateModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, TranslateModule, RouterModule],
   template: `
     <div class="login-container">
       <div class="login-card">
@@ -53,6 +55,8 @@ import { AuthService } from '../../auth.service';
             {{ isLoading ? 'Logging in...' : ('LOGIN.BUTTON' | translate) }}
           </button>
 
+          <div class="register-link">Não tem conta? <a routerLink="/register">Crie agora</a></div>
+
           <div *ngIf="errorMessage" class="error-message">
             {{ errorMessage }}
           </div>
@@ -64,139 +68,222 @@ import { AuthService } from '../../auth.service';
       </div>
     </div>
   `,
-  styles: [`
-    @import '../../../variables';
+  styles: [
+    `
+      @import '../../../variables';
 
-    .login-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: linear-gradient(135deg, white 0%, #f0f4ff 100%);
-    }
+      .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: $background-page;
+        background-image:
+          radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+          radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+          radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
 
-    .login-card {
-      background: $background-card;
-      padding: 3rem 2.5rem;
-      border-radius: $border-radius * 2;
-      box-shadow: $shadow-card;
-      width: 100%;
-      max-width: 420px;
-      text-align: center;
-    }
-
-    .brand-logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: $text-basic;
-      margin-bottom: 2rem;
-    }
-
-    .welcome-text {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: $text-basic;
-      margin-bottom: 0.5rem;
-    }
-
-    .sub-text {
-      color: $text-hint;
-      margin-bottom: 2rem;
-      font-size: 0.9rem;
-    }
-
-    .form-group {
-      text-align: left;
-      margin-bottom: 1.25rem;
-
-      label {
-        display: block;
-        font-size: 0.85rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: $text-basic;
+        /* Mesh Gradient decorative blur (optional) */
+        &::before {
+          content: '';
+          position: absolute;
+          width: 120%;
+          height: 120%;
+          background:
+            radial-gradient(circle at 15% 50%, rgba($primary-400, 0.15), transparent 25%),
+            radial-gradient(circle at 85% 30%, rgba($primary-600, 0.15), transparent 25%);
+          filter: blur(60px);
+          z-index: 0;
+        }
       }
 
-      input {
+      .login-card {
+        position: relative;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.85); /* Glass base */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 3rem 2.5rem;
+        border-radius: $border-radius-base;
+        box-shadow: $shadow-xl;
         width: 100%;
-        padding: 0.75rem 1rem;
-        border: 1px solid $border-basic;
-        border-radius: $border-radius;
+        max-width: 420px;
+        text-align: center;
+      }
+
+      .brand-logo {
+        font-size: 1.75rem;
+        font-weight: 800; /* Extra bold */
+        letter-spacing: -0.025em;
+        background: linear-gradient(135deg, $primary-600, $primary-800);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 2rem;
+      }
+
+      .welcome-text {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $text-main;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.025em;
+      }
+
+      .sub-text {
+        color: $text-secondary;
+        margin-bottom: 2.5rem;
         font-size: 0.95rem;
-        outline: none;
-        transition: border-color 0.2s;
+      }
 
-        &:focus {
-          border-color: $primary-500;
+      .form-group {
+        text-align: left;
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          font-size: 0.85rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: $text-main;
         }
 
-        &.error {
-          border-color: $danger;
+        input {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border: 1px solid $border-light;
+          border-radius: $border-radius-sm;
+          font-size: 0.95rem;
+          background-color: rgba(255, 255, 255, 0.8);
+          outline: none;
+          transition: all 0.2s ease-in-out;
+          color: $text-main;
+
+          &::placeholder {
+            color: $neutral-400;
+          }
+
+          &:focus {
+            background-color: #fff;
+            border-color: $primary;
+            box-shadow: 0 0 0 3px rgba($primary, 0.1); /* Focus ring */
+          }
+
+          &.error {
+            border-color: $error;
+            &:focus {
+              box-shadow: 0 0 0 3px rgba($error, 0.1);
+            }
+          }
         }
       }
-    }
 
-    .password-input {
-      position: relative;
+      .password-input {
+        position: relative;
 
-      .toggle-password {
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
+        .toggle-password {
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          color: $neutral-400;
+          cursor: pointer;
+          font-size: 0.85rem;
+          font-weight: 600;
+          transition: color 0.2s;
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+
+      .forgot-password {
+        text-align: right;
+        margin-bottom: 1.5rem;
+
+        a {
+          color: $primary;
+          text-decoration: none;
+          font-size: 0.85rem;
+          font-weight: 500;
+          transition: color 0.2s;
+
+          &:hover {
+            color: $primary-hover;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .btn-primary {
+        width: 100%;
+        padding: 0.875rem;
+        background-color: $primary;
+        color: white;
         border: none;
-        color: $text-hint;
-        cursor: pointer;
-        font-size: 0.8rem;
-      }
-    }
-
-    .forgot-password {
-      text-align: right;
-      margin-bottom: 1.5rem;
-
-      a {
-        color: $primary-500;
-        text-decoration: none;
-        font-size: 0.85rem;
+        border-radius: $border-radius-sm;
         font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: $shadow-sm;
+
+        &:hover:not(:disabled) {
+          background-color: $primary-hover;
+          transform: translateY(-1px);
+          box-shadow: $shadow-md;
+        }
+
+        &:active:not(:disabled) {
+          transform: translateY(0);
+        }
+
+        &:disabled {
+          background-color: $neutral-300;
+          cursor: not-allowed;
+          box-shadow: none;
+        }
       }
-    }
 
-    .btn-primary {
-      width: 100%;
-      padding: 0.875rem;
-      background-color: $primary-500;
-      color: white;
-      border: none;
-      border-radius: $border-radius;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.2s;
-
-      &:hover:not(:disabled) {
-        background-color: $primary-600;
+      .error-message {
+        color: $error;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        background-color: rgba($error, 0.1);
+        padding: 0.75rem;
+        border-radius: $border-radius-sm;
       }
 
-      &:disabled {
-        background-color: $primary-300;
-        cursor: not-allowed;
+      .footer {
+        margin-top: 2.5rem;
+        color: $text-secondary;
+        font-size: 0.75rem;
       }
-    }
 
-    .error-message {
-      color: $danger;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-    }
+      .register-link {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        color: $text-secondary;
 
-    .footer {
-      margin-top: 2.5rem;
-      color: $text-hint;
-      font-size: 0.75rem;
-    }
-  `]
+        a {
+          color: $primary;
+          text-decoration: none;
+          font-weight: 600;
+          transition: color 0.2s;
+
+          &:hover {
+            color: $primary-hover;
+            text-decoration: underline;
+          }
+        }
+      }
+    `,
+  ],
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -207,11 +294,11 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]]
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -240,7 +327,7 @@ export class LoginComponent {
       error: (err) => {
         this.isLoading = false;
         this.errorMessage = err.error?.message || 'Login failed. Please check your credentials.';
-      }
+      },
     });
   }
 }

@@ -10,7 +10,13 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [publicGuard]
+    canActivate: [publicGuard],
+  },
+  {
+    path: 'register',
+    loadComponent: () =>
+      import('./modules/auth/register.component').then((m) => m.RegisterComponent),
+    canActivate: [publicGuard],
   },
   {
     path: '',
@@ -19,22 +25,24 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: DashboardComponent
+        component: DashboardComponent,
       },
       {
         path: 'users',
-        loadChildren: () => import('./modules/users/users.routes').then(m => m.USERS_ROUTES),
+        loadChildren: () => import('./modules/users/users.routes').then((m) => m.USERS_ROUTES),
         canActivate: [roleGuard],
-        data: { roles: ['admin'] } // Only admins can access user management
+        data: { roles: ['admin'] }, // Only admins can access user management
       },
       {
         path: 'patients',
-        loadChildren: () => import('./modules/patients/patients.routes').then(m => m.PATIENT_ROUTES)
+        loadChildren: () =>
+          import('./modules/patients/patients.routes').then((m) => m.PATIENT_ROUTES),
       },
       {
         path: 'health-plans',
-        loadChildren: () => import('./modules/health-plans/health-plans.routes').then(m => m.HEALTH_PLAN_ROUTES)
-      }
-    ]
-  }
+        loadChildren: () =>
+          import('./modules/health-plans/health-plans.routes').then((m) => m.HEALTH_PLAN_ROUTES),
+      },
+    ],
+  },
 ];

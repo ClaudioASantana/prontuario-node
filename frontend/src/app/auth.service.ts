@@ -5,7 +5,7 @@ import { jwtDecode } from 'jwt-decode';
 import { LoginDto, AuthResponseDto } from './models/auth.models';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private apiUrl = 'http://localhost:3000/api/v1/auth'; // Adjust if environment config exists
@@ -20,13 +20,20 @@ export class AuthService {
   }
 
   login(credentials: LoginDto): Observable<AuthResponseDto> {
-    return this.http.post<AuthResponseDto>(`${this.apiUrl}/login`, credentials)
-      .pipe(
-        tap(response => {
-          this.saveTokens(response);
-          this.decodeAndNotify(response.accessToken);
-        })
-      );
+    return this.http.post<AuthResponseDto>(`${this.apiUrl}/login`, credentials).pipe(
+      tap((response) => {
+        this.saveTokens(response);
+        this.decodeAndNotify(response.accessToken);
+      }),
+    );
+  }
+
+  register(user: any): Observable<any> {
+    // apiUrl is .../auth, but registration is at .../users
+    // We can assume apiUrl is 'http://localhost:3000/api/v1/auth'
+    // So we need 'http://localhost:3000/api/v1/users'
+    const usersUrl = this.apiUrl.replace('/auth', '/users');
+    return this.http.post(usersUrl, user);
   }
 
   logout(): void {
