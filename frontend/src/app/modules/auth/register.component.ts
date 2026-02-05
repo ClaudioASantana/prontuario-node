@@ -113,14 +113,14 @@ import { AuthService } from '../../auth.service';
   `,
   styles: [
     `
-      @import '../../../variables';
+      /* Temporarily removed SCSS - will use Tailwind */
 
       .register-container {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background-color: $background-page;
+        background-color: #fafafa;
         background-image:
           radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
           radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
@@ -135,8 +135,8 @@ import { AuthService } from '../../auth.service';
           width: 120%;
           height: 120%;
           background:
-            radial-gradient(circle at 15% 50%, rgba($primary-400, 0.15), transparent 25%),
-            radial-gradient(circle at 85% 30%, rgba($primary-600, 0.15), transparent 25%);
+            radial-gradient(circle at 15% 50%, rgba(#60a5fa, 0.15), transparent 25%),
+            radial-gradient(circle at 85% 30%, rgba(#2563eb, 0.15), transparent 25%);
           filter: blur(60px);
           z-index: 0;
         }
@@ -150,8 +150,8 @@ import { AuthService } from '../../auth.service';
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.5);
         padding: 3rem 2.5rem;
-        border-radius: $border-radius-base;
-        box-shadow: $shadow-xl;
+        border-radius: 12px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         width: 100%;
         max-width: 480px; /* Slightly wider for register form */
         text-align: center;
@@ -161,7 +161,7 @@ import { AuthService } from '../../auth.service';
         font-size: 1.75rem;
         font-weight: 800;
         letter-spacing: -0.025em;
-        background: linear-gradient(135deg, $primary-600, $primary-800);
+        background: linear-gradient(135deg, #2563eb, #1e40af);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin-bottom: 2rem;
@@ -170,12 +170,12 @@ import { AuthService } from '../../auth.service';
       .welcome-text {
         font-size: 1.5rem;
         font-weight: 700;
-        color: $text-main;
+        color: #18181b;
         margin-bottom: 0.5rem;
       }
 
       .sub-text {
-        color: $text-secondary;
+        color: #71717a;
         margin-bottom: 2.5rem;
         font-size: 0.95rem;
       }
@@ -189,40 +189,40 @@ import { AuthService } from '../../auth.service';
           font-size: 0.85rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-          color: $text-main;
+          color: #18181b;
         }
 
         input {
           width: 100%;
           padding: 0.75rem 1rem;
-          border: 1px solid $border-light;
-          border-radius: $border-radius-sm;
+          border: 1px solid #f4f4f5;
+          border-radius: 8px;
           font-size: 0.95rem;
           background-color: rgba(255, 255, 255, 0.8);
           outline: none;
           transition: all 0.2s ease-in-out;
-          color: $text-main;
+          color: #18181b;
 
           &::placeholder {
-            color: $neutral-400;
+            color: #a1a1aa;
           }
 
           &:focus {
             background-color: #fff;
-            border-color: $primary;
-            box-shadow: 0 0 0 3px rgba($primary, 0.1);
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(#3b82f6, 0.1);
           }
 
           &.error {
-            border-color: $error;
+            border-color: #ef4444;
             &:focus {
-              box-shadow: 0 0 0 3px rgba($error, 0.1);
+              box-shadow: 0 0 0 3px rgba(#ef4444, 0.1);
             }
           }
         }
 
         .error-hint {
-          color: $error;
+          color: #ef4444;
           font-size: 0.75rem;
           margin-top: 0.25rem;
         }
@@ -238,14 +238,14 @@ import { AuthService } from '../../auth.service';
           transform: translateY(-50%);
           background: none;
           border: none;
-          color: $neutral-400;
+          color: #a1a1aa;
           cursor: pointer;
           font-size: 0.85rem;
           font-weight: 600;
           transition: color 0.2s;
 
           &:hover {
-            color: $primary;
+            color: #3b82f6;
           }
         }
       }
@@ -253,20 +253,20 @@ import { AuthService } from '../../auth.service';
       .btn-primary {
         width: 100%;
         padding: 0.875rem;
-        background-color: $primary;
+        background-color: #3b82f6;
         color: white;
         border: none;
-        border-radius: $border-radius-sm;
+        border-radius: 8px;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s;
-        box-shadow: $shadow-sm;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         margin-top: 1rem;
 
         &:hover:not(:disabled) {
-          background-color: $primary-hover;
+          background-color: #2563eb;
           transform: translateY(-1px);
-          box-shadow: $shadow-md;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         &:active:not(:disabled) {
@@ -274,34 +274,34 @@ import { AuthService } from '../../auth.service';
         }
 
         &:disabled {
-          background-color: $neutral-300;
+          background-color: #d4d4d8;
           cursor: not-allowed;
           box-shadow: none;
         }
       }
 
       .error-message {
-        color: $error;
+        color: #ef4444;
         margin-top: 1rem;
         font-size: 0.85rem;
-        background-color: rgba($error, 0.1);
+        background-color: rgba(#ef4444, 0.1);
         padding: 0.75rem;
-        border-radius: $border-radius-sm;
+        border-radius: 8px;
       }
 
       .login-link {
         margin-top: 1.5rem;
         font-size: 0.9rem;
-        color: $text-secondary;
+        color: #71717a;
 
         a {
-          color: $primary;
+          color: #3b82f6;
           text-decoration: none;
           font-weight: 600;
           transition: color 0.2s;
 
           &:hover {
-            color: $primary-hover;
+            color: #2563eb;
             text-decoration: underline;
           }
         }

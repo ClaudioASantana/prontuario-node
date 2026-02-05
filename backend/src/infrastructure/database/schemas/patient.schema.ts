@@ -63,6 +63,9 @@ export class PatientSchema {
   @Column('int', { default: 0 })
   activityLevel: number;
 
+  @Column('boolean', { default: false })
+  receivedTransfusion10Years: boolean;
+
   @CreateDateColumn()
   createdAt: Date;
 

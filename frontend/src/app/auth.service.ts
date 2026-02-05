@@ -15,6 +15,13 @@ export class AuthService {
   private currentUserRoleSubject = new BehaviorSubject<string | null>(null);
   public currentUserRole$ = this.currentUserRoleSubject.asObservable();
 
+  private currentUserSubject = new BehaviorSubject<{
+    name: string;
+    role: string;
+    initials: string;
+  } | null>(null);
+  public currentUser$ = this.currentUserSubject.asObservable();
+
   constructor(private http: HttpClient) {
     this.loadUserRoleFromToken();
   }
@@ -40,6 +47,7 @@ export class AuthService {
     localStorage.removeItem(this.tokenKey);
     localStorage.removeItem(this.refreshTokenKey);
     this.currentUserRoleSubject.next(null);
+    this.currentUserSubject.next(null);
   }
 
   isAuthenticated(): boolean {
@@ -65,12 +73,28 @@ export class AuthService {
   private decodeAndNotify(token: string): void {
     try {
       const decoded: any = jwtDecode(token);
-      // Backend TokenPayload: roles: string[]
+      // Backend TokenPayload: roles: string[], name: string
       const role = decoded.roles && decoded.roles.length > 0 ? decoded.roles[0] : null;
+      const name = decoded.name || 'Usuário';
+
       this.currentUserRoleSubject.next(role);
+
+      // Helper to get initials
+      const getInitials = (n: string) => {
+        const parts = n.split(' ');
+        if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+        return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+      };
+
+      this.currentUserSubject.next({
+        name,
+        role: role || 'Usuário',
+        initials: getInitials(name),
+      });
     } catch (error) {
       console.error('Error decoding token', error);
       this.currentUserRoleSubject.next(null);
+      this.currentUserSubject.next(null);
     }
   }
 }

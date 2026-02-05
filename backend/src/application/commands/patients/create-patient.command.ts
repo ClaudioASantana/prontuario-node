@@ -16,5 +16,8 @@ export class CreatePatientCommand implements ICommand {
     public readonly smoker?: boolean,
     public readonly alcoholConsumption?: boolean,
     public readonly activityLevel?: number,
+    public readonly insurancePlan?: string,
+    public readonly insuranceNumber?: string,
+    public readonly receivedTransfusion10Years?: boolean,
   ) {}
 }

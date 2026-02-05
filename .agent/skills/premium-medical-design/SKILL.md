@@ -19,12 +19,11 @@ This skill provides a comprehensive design system for building premium, modern m
 - **Soft Shadows**: Layered depth without harshness
 - **Smooth Animations**: Micro-interactions for engagement
 
-### 2. **Medical Context**
-
+- **Inovação Digital**: Uso de Cyan vibrante (#13DCF2) para pontos de ação
+- **Autoridade Clínica**: Contraste com Deep Navy (Azul Marinho Profundo) para confiança
 - **Patient-Centric**: Clear, accessible information
 - **Professional**: Clean, trustworthy appearance
 - **Efficient**: Quick access to critical data
-- **Calming**: Soft colors, reduced visual stress
 
 ### 3. **Mobile-First**
 
@@ -38,35 +37,47 @@ This skill provides a comprehensive design system for building premium, modern m
 ### Color Palette
 
 ```scss
-// Primary (Blue - Trust & Medical)
-$primary-50: #eff6ff;
-$primary-100: #dbeafe;
-$primary-200: #bfdbfe;
-$primary-300: #93c5fd;
-$primary-400: #60a5fa;
-$primary-500: #3b82f6;
-$primary-600: #2563eb;
-$primary-700: #1d4ed8;
-$primary-800: #1e40af;
-$primary-900: #1e3a8a;
+// Primary (Cyan - Innovation & Tech) - #13DCF2
+$primary-50: "#E7FBFD";
+$primary-100: "#C2F6FA";
+$primary-200: "#85ECF5";
+$primary-300: "#49E3F0";
+$primary-400: "#0DDAEC";
+$primary-500: "#13DCF2";
+$primary-600: "#10BBCE";
+$primary-700: "#0E99A9";
+$primary-800: "#0B7885";
+$primary-900: "#08565F";
+
+// Secondary (Deep Navy - Authority & Trust)
+$secondary-50: "#F0F5FA";
+$secondary-100: "#E1EBF5";
+$secondary-200: "#C3D7EB";
+$secondary-300: "#A5C3E1";
+$secondary-400: "#699BD2";
+$secondary-500: "#2D73C3";
+$secondary-600: "#245C9C";
+$secondary-700: "#1B4575";
+$secondary-800: "#122E4E";
+$secondary-900: "#091727";
 
 // Neutral (Slate - Professional)
-$neutral-50: #f8fafc;
-$neutral-100: #f1f5f9;
-$neutral-200: #e2e8f0;
-$neutral-300: #cbd5e1;
-$neutral-400: #94a3b8;
-$neutral-500: #64748b;
-$neutral-600: #475569;
-$neutral-700: #334155;
-$neutral-800: #1e293b;
-$neutral-900: #0f172a;
+$neutral-50: "#fafafa";
+$neutral-100: "#f4f4f5";
+$neutral-200: "#e4e4e7";
+$neutral-300: "#d4d4d8";
+$neutral-400: "#a1a1aa";
+$neutral-500: "#71717a";
+$neutral-600: "#52525b";
+$neutral-700: "#3f3f46";
+$neutral-800: "#27272a";
+$neutral-900: "#18181b";
 
 // Semantic Colors
 $success: #10b981;
 $warning: #f59e0b;
 $error: #ef4444;
-$info: #3b82f6;
+$info: $primary-500;
 
 // Text Colors
 $text-main: $neutral-900;
@@ -751,6 +762,6 @@ See the following components for reference implementations:
 
 ---
 
-**Last Updated**: 2026-02-04  
-**Version**: 1.0.0  
+**Last Updated**: 2026-02-05  
+**Version**: 1.1.0 (Branding Refinement)  
 **Maintainer**: Antigravity AI

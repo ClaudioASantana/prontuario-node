@@ -3,14 +3,33 @@ import { LoginComponent } from './modules/auth/login.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { authGuard, publicGuard } from './guards/auth.guard';
+import { landingGuard } from './guards/landing.guard';
+import { LandingPageComponent } from './modules/landing/landing-page.component';
 
 import { roleGuard } from './guards/role.guard';
 
 export const routes: Routes = [
+  // Landing Page - Public root
   {
-    path: 'login',
+    path: '',
+    component: LandingPageComponent,
+    canActivate: [landingGuard], // Redirects authenticated users to dashboard
+  },
+  // Authentication routes with role parameter
+  {
+    path: 'auth/login/:role',
     component: LoginComponent,
     canActivate: [publicGuard],
+  },
+  {
+    path: 'auth/login',
+    redirectTo: 'auth/login/patient', // Default to patient login
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    redirectTo: 'auth/login/patient', // Legacy redirect
+    pathMatch: 'full',
   },
   {
     path: 'register',
@@ -18,14 +37,18 @@ export const routes: Routes = [
       import('./modules/auth/register.component').then((m) => m.RegisterComponent),
     canActivate: [publicGuard],
   },
+  // Protected dashboard and app routes
   {
-    path: '',
+    path: 'dashboard',
     component: MainLayoutComponent,
     canActivate: [authGuard],
     children: [
       {
         path: '',
-        component: DashboardComponent,
+        loadComponent: () =>
+          import('./modules/dashboard/dashboard-container.component').then(
+            (m) => m.DashboardContainerComponent,
+          ),
       },
       {
         path: 'users',

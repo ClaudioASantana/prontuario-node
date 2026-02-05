@@ -21,6 +21,7 @@ export class Patient {
   smoker: boolean;
   alcoholConsumption: boolean;
   activityLevel: number; // 0-Low, 1-Medium, 2-High
+  receivedTransfusion10Years: boolean;
 
   createdAt: Date;
   updatedAt: Date;
@@ -44,7 +45,8 @@ export class Patient {
     this.smoker = false;
     this.alcoholConsumption = false;
     this.activityLevel = 0;
-    
+    this.receivedTransfusion10Years = false;
+
     this.createdAt = new Date();
     this.updatedAt = new Date();
   }

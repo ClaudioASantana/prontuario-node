@@ -63,6 +63,7 @@ export class LoginHandler
     const payload = new TokenPayload(
       user.id,
       user.email,
+      user.name, // Added Name
       [user.role],
       [], // permissions
       undefined, // organizationId

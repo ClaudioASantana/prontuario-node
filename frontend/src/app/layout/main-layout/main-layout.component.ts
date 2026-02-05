@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { HeaderComponent } from '../components/header/header.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 
@@ -14,6 +16,7 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
       <div class="global-mesh-bg"></div>
 
       <div class="layout-container">
+        <!-- Backdrop for mobile -->
         <!-- Backdrop for mobile -->
         <div class="sidebar-backdrop" *ngIf="isMobileMenuOpen" (click)="toggleMobileMenu()"></div>
 
@@ -34,13 +37,13 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
   `,
   styles: [
     `
-      @import '../../../variables';
+      /* Removed SCSS import */
 
       .layout-wrapper {
         position: relative;
         height: 100vh;
         overflow: hidden;
-        background-color: $background-page;
+        background-color: #fafafa;
       }
 
       .layout-container {
@@ -57,9 +60,10 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
         padding: 1rem; /* Gap for floating effect */
         padding-right: 0; /* Attach to content or keep gap? Let's try gap */
 
-        @media (max-width: $tablet) {
+        @media (max-width: 1024px) {
           width: 0;
           padding: 0;
+          z-index: 50; /* Ensure sidebar is above backdrop when open */
         }
       }
 
@@ -104,8 +108,26 @@ import { SidebarComponent } from '../components/sidebar/sidebar.component';
     `,
   ],
 })
-export class MainLayoutComponent {
+export class MainLayoutComponent implements OnInit, OnDestroy {
   isMobileMenuOpen = false;
+  private routerSubscription: Subscription | null = null;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    // Ensure menu is closed on route navigation
+    this.routerSubscription = this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.isMobileMenuOpen = false;
+      });
+  }
+
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;

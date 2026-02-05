@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from '../../../auth.service';
 import { Subscription } from 'rxjs';
@@ -72,13 +72,13 @@ interface MenuItem {
   `,
   styles: [
     `
-      @import '../../../../variables';
+      /* Removed SCSS import */
 
       :host {
         display: block;
         height: 100%;
 
-        @media (max-width: $tablet) {
+        @media (max-width: 1024px) {
           position: fixed;
           top: 0;
           left: 0;
@@ -98,14 +98,14 @@ interface MenuItem {
       .sidebar-glass {
         height: 100%;
         background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.6);
         border-radius: 24px;
         display: flex;
         flex-direction: column;
         padding: 1.5rem 1rem;
-        box-shadow: $shadow-lg;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 50;
       }
@@ -122,7 +122,7 @@ interface MenuItem {
       .logo-icon {
         width: 40px;
         height: 40px;
-        background: linear-gradient(135deg, $primary-600, $primary-800);
+        background: linear-gradient(135deg, #2563eb, #1e40af);
         color: white;
         border-radius: 12px;
         display: flex;
@@ -130,7 +130,7 @@ interface MenuItem {
         justify-content: center;
         font-weight: 800;
         font-size: 1.5rem;
-        box-shadow: 0 4px 10px rgba($primary-600, 0.3);
+        box-shadow: 0 4px 10px rgba(#2563eb, 0.3);
       }
 
       .brand-text {
@@ -140,12 +140,12 @@ interface MenuItem {
         .brand-title {
           font-weight: 700;
           font-size: 1.1rem;
-          color: $text-main;
+          color: #18181b;
           letter-spacing: -0.02rem;
         }
         .brand-subtitle {
           font-size: 0.75rem;
-          color: $primary-500;
+          color: #3b82f6;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.1em;
@@ -173,7 +173,7 @@ interface MenuItem {
         font-size: 0.75rem;
         font-weight: 700;
         text-transform: uppercase;
-        color: $neutral-400;
+        color: #a1a1aa;
         letter-spacing: 0.05em;
       }
 
@@ -184,7 +184,7 @@ interface MenuItem {
         padding: 0.85rem 1rem;
         border-radius: 16px;
         text-decoration: none;
-        color: $text-secondary;
+        color: #71717a;
         font-weight: 500;
         font-size: 0.95rem;
         transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -195,7 +195,7 @@ interface MenuItem {
           align-items: center;
           width: 24px; /* Fixed width for alignment */
           margin-right: 0.85rem;
-          color: $neutral-400;
+          color: #a1a1aa;
           transition: color 0.2s;
 
           svg {
@@ -210,7 +210,7 @@ interface MenuItem {
           top: 0;
           bottom: 0;
           width: 100%;
-          background: linear-gradient(90deg, rgba($primary-500, 0.1), rgba($primary-500, 0.05));
+          background: linear-gradient(90deg, rgba(#3b82f6, 0.1), rgba(#3b82f6, 0.05));
           opacity: 0;
           z-index: -1;
           transition: opacity 0.2s;
@@ -219,23 +219,23 @@ interface MenuItem {
         /* Hover State */
         &:hover {
           background-color: rgba(255, 255, 255, 0.6);
-          color: $primary-600;
+          color: #2563eb;
           transform: translateX(4px);
 
           .icon-wrapper {
-            color: $primary-500;
+            color: #3b82f6;
           }
         }
 
         /* Active State */
         &.active {
           background-color: white; /* Solid white pop */
-          color: $primary-600;
+          color: #2563eb;
           font-weight: 600;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
           .icon-wrapper {
-            color: $primary-500;
+            color: #3b82f6;
           }
 
           .active-indicator {
@@ -251,17 +251,17 @@ interface MenuItem {
         border: none;
         width: 100%;
         cursor: pointer;
-        color: $error;
+        color: #ef4444;
 
         .icon-wrapper {
-          color: rgba($error, 0.7);
+          color: rgba(#ef4444, 0.7);
         }
 
         &:hover {
-          background-color: rgba($error, 0.05);
-          color: $error;
+          background-color: rgba(#ef4444, 0.05);
+          color: #ef4444;
           .icon-wrapper {
-            color: $error;
+            color: #ef4444;
           }
         }
       }
@@ -296,7 +296,6 @@ export class SidebarComponent implements OnInit, OnDestroy {
       label: 'MENU.PATIENTS',
       route: '/patients',
       icon: this.icons.patients,
-      roles: ['admin', 'doctor', 'receptionist'],
     },
     {
       label: 'MENU.APPOINTMENTS',
@@ -319,7 +318,10 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   visibleMenuItems: MenuItem[] = [];
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.roleSubscription = this.authService.currentUserRole$.subscribe((role) => {
@@ -336,6 +338,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   logout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
   private updateVisibleItems(): void {

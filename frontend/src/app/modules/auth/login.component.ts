@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from '../../auth.service';
@@ -16,7 +16,13 @@ import { RouterModule } from '@angular/router';
     <div class="login-container">
       <div class="login-card">
         <div class="brand-logo">Prontuário</div>
-        <h2 class="welcome-text">{{ 'LOGIN.TITLE' | translate }}</h2>
+
+        <div class="role-badge" *ngIf="selectedRole">
+          <i [class]="getRoleIcon()"></i>
+          {{ getRoleLabel() }}
+        </div>
+
+        <h2 class="welcome-text">{{ getRoleTitle() }}</h2>
         <p class="sub-text">{{ 'LOGIN.SUBTITLE' | translate }}</p>
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -70,14 +76,14 @@ import { RouterModule } from '@angular/router';
   `,
   styles: [
     `
-      @import '../../../variables';
+      /* Temporarily removed SCSS - will use Tailwind */
 
       .login-container {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background-color: $background-page;
+        background-color: #fafafa;
         background-image:
           radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
           radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
@@ -93,8 +99,8 @@ import { RouterModule } from '@angular/router';
           width: 120%;
           height: 120%;
           background:
-            radial-gradient(circle at 15% 50%, rgba($primary-400, 0.15), transparent 25%),
-            radial-gradient(circle at 85% 30%, rgba($primary-600, 0.15), transparent 25%);
+            radial-gradient(circle at 15% 50%, rgba(#60a5fa, 0.15), transparent 25%),
+            radial-gradient(circle at 85% 30%, rgba(#2563eb, 0.15), transparent 25%);
           filter: blur(60px);
           z-index: 0;
         }
@@ -108,8 +114,8 @@ import { RouterModule } from '@angular/router';
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.5);
         padding: 3rem 2.5rem;
-        border-radius: $border-radius-base;
-        box-shadow: $shadow-xl;
+        border-radius: 12px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         width: 100%;
         max-width: 420px;
         text-align: center;
@@ -119,22 +125,39 @@ import { RouterModule } from '@angular/router';
         font-size: 1.75rem;
         font-weight: 800; /* Extra bold */
         letter-spacing: -0.025em;
-        background: linear-gradient(135deg, $primary-600, $primary-800);
+        background: linear-gradient(135deg, #2563eb, #1e40af);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .role-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+
+        i {
+          font-size: 1rem;
+        }
       }
 
       .welcome-text {
         font-size: 1.5rem;
         font-weight: 700;
-        color: $text-main;
+        color: #18181b;
         margin-bottom: 0.5rem;
         letter-spacing: -0.025em;
       }
 
       .sub-text {
-        color: $text-secondary;
+        color: #71717a;
         margin-bottom: 2.5rem;
         font-size: 0.95rem;
       }
@@ -148,34 +171,34 @@ import { RouterModule } from '@angular/router';
           font-size: 0.85rem;
           font-weight: 600;
           margin-bottom: 0.5rem;
-          color: $text-main;
+          color: #18181b;
         }
 
         input {
           width: 100%;
           padding: 0.75rem 1rem;
-          border: 1px solid $border-light;
-          border-radius: $border-radius-sm;
+          border: 1px solid #f4f4f5;
+          border-radius: 8px;
           font-size: 0.95rem;
           background-color: rgba(255, 255, 255, 0.8);
           outline: none;
           transition: all 0.2s ease-in-out;
-          color: $text-main;
+          color: #18181b;
 
           &::placeholder {
-            color: $neutral-400;
+            color: #a1a1aa;
           }
 
           &:focus {
             background-color: #fff;
-            border-color: $primary;
-            box-shadow: 0 0 0 3px rgba($primary, 0.1); /* Focus ring */
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(#3b82f6, 0.1); /* Focus ring */
           }
 
           &.error {
-            border-color: $error;
+            border-color: #ef4444;
             &:focus {
-              box-shadow: 0 0 0 3px rgba($error, 0.1);
+              box-shadow: 0 0 0 3px rgba(#ef4444, 0.1);
             }
           }
         }
@@ -191,14 +214,14 @@ import { RouterModule } from '@angular/router';
           transform: translateY(-50%);
           background: none;
           border: none;
-          color: $neutral-400;
+          color: #a1a1aa;
           cursor: pointer;
           font-size: 0.85rem;
           font-weight: 600;
           transition: color 0.2s;
 
           &:hover {
-            color: $primary;
+            color: #3b82f6;
           }
         }
       }
@@ -208,14 +231,14 @@ import { RouterModule } from '@angular/router';
         margin-bottom: 1.5rem;
 
         a {
-          color: $primary;
+          color: #3b82f6;
           text-decoration: none;
           font-size: 0.85rem;
           font-weight: 500;
           transition: color 0.2s;
 
           &:hover {
-            color: $primary-hover;
+            color: #2563eb;
             text-decoration: underline;
           }
         }
@@ -224,19 +247,19 @@ import { RouterModule } from '@angular/router';
       .btn-primary {
         width: 100%;
         padding: 0.875rem;
-        background-color: $primary;
+        background-color: #3b82f6;
         color: white;
         border: none;
-        border-radius: $border-radius-sm;
+        border-radius: 8px;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s;
-        box-shadow: $shadow-sm;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
         &:hover:not(:disabled) {
-          background-color: $primary-hover;
+          background-color: #2563eb;
           transform: translateY(-1px);
-          box-shadow: $shadow-md;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         &:active:not(:disabled) {
@@ -244,40 +267,40 @@ import { RouterModule } from '@angular/router';
         }
 
         &:disabled {
-          background-color: $neutral-300;
+          background-color: #d4d4d8;
           cursor: not-allowed;
           box-shadow: none;
         }
       }
 
       .error-message {
-        color: $error;
+        color: #ef4444;
         margin-top: 1rem;
         font-size: 0.85rem;
-        background-color: rgba($error, 0.1);
+        background-color: rgba(#ef4444, 0.1);
         padding: 0.75rem;
-        border-radius: $border-radius-sm;
+        border-radius: 8px;
       }
 
       .footer {
         margin-top: 2.5rem;
-        color: $text-secondary;
+        color: #71717a;
         font-size: 0.75rem;
       }
 
       .register-link {
         margin-top: 1.5rem;
         font-size: 0.9rem;
-        color: $text-secondary;
+        color: #71717a;
 
         a {
-          color: $primary;
+          color: #3b82f6;
           text-decoration: none;
           font-weight: 600;
           transition: color 0.2s;
 
           &:hover {
-            color: $primary-hover;
+            color: #2563eb;
             text-decoration: underline;
           }
         }
@@ -285,20 +308,29 @@ import { RouterModule } from '@angular/router';
     `,
   ],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   showPassword = false;
   isLoading = false;
   errorMessage = '';
+  selectedRole: string | null = null;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute,
     private authService: AuthService,
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
+    });
+  }
+
+  ngOnInit(): void {
+    // Get role from route parameter
+    this.route.params.subscribe((params) => {
+      this.selectedRole = params['role'] || null;
     });
   }
 
@@ -309,6 +341,36 @@ export class LoginComponent {
   isFieldInvalid(field: string): boolean {
     const control = this.loginForm.get(field);
     return !!(control && control.invalid && (control.dirty || control.touched));
+  }
+
+  getRoleIcon(): string {
+    const icons: Record<string, string> = {
+      patient: 'bi bi-person-fill',
+      physician: 'bi bi-briefcase-fill',
+      health_plan: 'bi bi-building',
+      admin: 'bi bi-shield-fill',
+    };
+    return icons[this.selectedRole || ''] || 'bi bi-person-fill';
+  }
+
+  getRoleLabel(): string {
+    const labels: Record<string, string> = {
+      patient: 'Paciente',
+      physician: 'Profissional de Saúde',
+      health_plan: 'Convênio',
+      admin: 'Administrador',
+    };
+    return labels[this.selectedRole || ''] || 'Usuário';
+  }
+
+  getRoleTitle(): string {
+    const titles: Record<string, string> = {
+      patient: 'Acesso para Pacientes',
+      physician: 'Acesso para Profissionais',
+      health_plan: 'Acesso para Convênios',
+      admin: 'Acesso Administrativo',
+    };
+    return titles[this.selectedRole || ''] || 'Bem-vindo';
   }
 
   onSubmit() {
@@ -322,7 +384,7 @@ export class LoginComponent {
     this.authService.login({ email, password }).subscribe({
       next: () => {
         this.isLoading = false;
-        this.router.navigate(['/']); // Redirect to dashboard
+        this.router.navigate(['/dashboard']); // Redirect to dashboard
       },
       error: (err) => {
         this.isLoading = false;

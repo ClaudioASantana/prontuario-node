@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { GlassCardComponent } from '../../shared/components/ui/glass-card.component';
 import { GlassButtonComponent } from '../../shared/components/ui/glass-button.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, TranslateModule, GlassCardComponent, GlassButtonComponent],
+  imports: [CommonModule, TranslateModule, GlassButtonComponent],
   template: `
     <div class="dashboard-container">
       <!-- Decorative Background Elements -->
@@ -40,7 +39,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
               ></span>
             </app-glass-button>
             <app-glass-button
-              variant="primary-gradient"
+              variant="primary"
               label="Novo Atendimento"
               (onClick)="onNewAppointment()"
             >
@@ -185,7 +184,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
   `,
   styles: [
     `
-      @import '../../../variables';
+      /* Temporarily removed SCSS import - will migrate to Tailwind later */
 
       /* --- Animation Keyframes --- */
       @keyframes float {
@@ -215,7 +214,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
         position: relative;
         min-height: 100vh;
         overflow: hidden;
-        background-color: $background-page;
+        background-color: #fafafa;
         font-family: 'Inter', sans-serif; /* Ensure modern font */
       }
 
@@ -233,13 +232,13 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
       .mesh-gradient-1 {
         top: -10%;
         left: -10%;
-        background: radial-gradient(circle, $primary-400, $primary-200);
+        background: radial-gradient(circle, #60a5fa, #bfdbfe);
         animation: float 20s infinite ease-in-out;
       }
       .mesh-gradient-2 {
         bottom: -10%;
         right: -10%;
-        background: radial-gradient(circle, $primary-200, $primary-300);
+        background: radial-gradient(circle, #bfdbfe, #93c5fd);
         animation: float 25s infinite ease-in-out reverse;
       }
 
@@ -264,7 +263,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
             font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: -0.05rem;
-            color: $text-main;
+            color: #18181b;
             margin: 0;
             display: flex;
             align-items: center;
@@ -279,7 +278,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
           .date-display {
             margin-top: 0.5rem;
             font-size: 1.1rem;
-            color: $text-secondary;
+            color: #71717a;
             font-weight: 500;
             display: flex;
             align-items: center;
@@ -300,8 +299,8 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
         border-radius: 14px;
         border: 1px solid rgba(255, 255, 255, 0.6);
         background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(10px);
-        color: $text-main;
+        backdrop-filter: blur(8px);
+        color: #18181b;
         font-size: 1.2rem;
         cursor: pointer;
         transition: all 0.2s ease;
@@ -322,14 +321,14 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
           right: 12px;
           width: 8px;
           height: 8px;
-          background: $error;
+          background: #ef4444;
           border-radius: 50%;
           border: 2px solid white;
         }
       }
 
       .btn-primary-gradient {
-        background: linear-gradient(135deg, $primary-600, $primary-500);
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
         color: white;
         border: none;
         height: 48px;
@@ -342,11 +341,11 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
         gap: 0.75rem;
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 4px 6px rgba($primary-600, 0.25);
+        box-shadow: 0 4px 6px rgba(#2563eb, 0.25);
 
         &:hover {
           transform: translateY(-2px) scale(1.02);
-          box-shadow: 0 8px 15px rgba($primary-600, 0.35);
+          box-shadow: 0 8px 15px rgba(#2563eb, 0.35);
         }
 
         i {
@@ -357,8 +356,8 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
       /* --- Glass Cards --- */
       .glass-card {
         background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.8);
         border-radius: 24px;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
@@ -382,7 +381,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
         h3 {
           font-size: 1.25rem;
           font-weight: 700;
-          color: $text-main;
+          color: #18181b;
           margin: 0;
           display: flex;
           align-items: center;
@@ -396,7 +395,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
         .btn-link {
           background: none;
           border: none;
-          color: $primary-600;
+          color: #2563eb;
           font-weight: 600;
           font-size: 0.9rem;
           cursor: pointer;
@@ -425,7 +424,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
         gap: 1.25rem;
         padding: 1.75rem;
 
-        @media (max-width: $mobile) {
+        @media (max-width: 768px) {
           padding: 1.25rem;
           gap: 1rem;
         }
@@ -462,12 +461,12 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
           .stat-value {
             font-size: 2rem;
             font-weight: 800;
-            color: $text-main;
+            color: #18181b;
             line-height: 1.1;
           }
           .stat-label {
             font-size: 0.9rem;
-            color: $text-secondary;
+            color: #71717a;
             font-weight: 500;
           }
         }
@@ -486,7 +485,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
             }
           }
           &.neutral {
-            color: $text-secondary;
+            color: #71717a;
           }
           &.negative {
             color: #f43f5e;
@@ -528,8 +527,8 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
           }
 
           .time-badge {
-            background: $neutral-100;
-            color: $text-main;
+            background: #f4f4f5;
+            color: #18181b;
             padding: 0.5rem 0.75rem;
             border-radius: 10px;
             font-weight: 700;
@@ -544,12 +543,12 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
 
             .patient-name {
               font-weight: 600;
-              color: $text-main;
+              color: #18181b;
               font-size: 1.05rem;
             }
             .apt-type {
               font-size: 0.85rem;
-              color: $text-secondary;
+              color: #71717a;
             }
           }
 
@@ -570,22 +569,22 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
               color: #d97706;
             }
             &.pending {
-              background: $neutral-100;
-              color: $text-secondary;
+              background: #f4f4f5;
+              color: #71717a;
             }
           }
 
           .btn-icon-action {
             background: none;
             border: none;
-            color: $text-secondary;
+            color: #71717a;
             cursor: pointer;
             padding: 0.5rem;
             margin-left: 0.5rem;
             opacity: 0;
             transition: opacity 0.2s;
             &:hover {
-              color: $primary-600;
+              color: #2563eb;
             }
           }
         }
@@ -603,7 +602,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
 
-        @media (max-width: $mobile) {
+        @media (max-width: 768px) {
           grid-template-columns: repeat(2, 1fr);
           gap: 0.75rem;
         }
@@ -620,7 +619,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
           cursor: pointer;
           transition: all 0.2s;
 
-          @media (max-width: $mobile) {
+          @media (max-width: 768px) {
             padding: 1rem 0.5rem;
           }
 
@@ -647,7 +646,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
           span {
             font-size: 0.85rem;
             font-weight: 600;
-            color: $text-main;
+            color: #18181b;
           }
 
           &:hover {
@@ -660,7 +659,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
 
       /* --- Task List --- */
       .badge-count {
-        background: $error;
+        background: #ef4444;
         color: white;
         font-size: 0.75rem;
         padding: 0.15rem 0.5rem;
@@ -695,8 +694,8 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
               width: 0;
               height: 0;
               &:checked + .checkmark {
-                background-color: $primary-500;
-                border-color: $primary-500;
+                background-color: #3b82f6;
+                border-color: #3b82f6;
                 &:after {
                   display: block;
                 }
@@ -708,7 +707,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
               left: 0;
               height: 20px;
               width: 20px;
-              border: 2px solid $neutral-400;
+              border: 2px solid #a1a1aa;
               border-radius: 6px;
               transition: all 0.2s;
               &:after {
@@ -732,7 +731,7 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
 
             .task-text {
               font-size: 0.95rem;
-              color: $text-main;
+              color: #18181b;
               font-weight: 500;
             }
             .task-meta {
@@ -741,13 +740,13 @@ import { GlassButtonComponent } from '../../shared/components/ui/glass-button.co
               font-weight: 600;
 
               &.priority-high {
-                color: $error;
+                color: #ef4444;
               }
               &.priority-medium {
-                color: $warning;
+                color: #f59e0b;
               }
               &.priority-low {
-                color: $text-secondary;
+                color: #71717a;
               }
             }
           }

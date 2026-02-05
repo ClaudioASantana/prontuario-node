@@ -16,6 +16,7 @@ export class CreatePatientDto {
   photoUrl?: string;
   insurancePlan?: string;
   insuranceNumber?: string;
+  receivedTransfusion10Years?: boolean;
 }
 
 export class PatientDto {
@@ -37,6 +38,7 @@ export class PatientDto {
   photoUrl?: string;
   insurancePlan?: string;
   insuranceNumber?: string;
+  receivedTransfusion10Years: boolean;
   createdAt: Date;
   updatedAt: Date;
 }

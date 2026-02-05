@@ -7,99 +7,49 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="lang-selector-modern">
+    <div
+      class="flex items-center gap-1 p-1 bg-white/40 border border-white/20 rounded-full backdrop-blur-sm"
+    >
       <button
-        class="lang-pill"
-        [class.active]="currentLang === 'pt-br'"
+        class="flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all duration-300"
+        [ngClass]="{
+          'bg-white shadow-sm ring-1 ring-black/5 scale-105': currentLang === 'pt-br',
+          'hover:bg-white/50 opacity-70 hover:opacity-100': currentLang !== 'pt-br',
+        }"
         (click)="switchLanguage('pt-br')"
         title="Português"
       >
-        <span class="flag">🇧🇷</span>
-        <span class="code" *ngIf="currentLang === 'pt-br'">PT</span>
+        <span class="text-base leading-none filter" [class.grayscale]="currentLang !== 'pt-br'"
+          >🇧🇷</span
+        >
+        <span
+          class="text-xs font-bold text-neutral-800 leading-none pt-0.5"
+          *ngIf="currentLang === 'pt-br'"
+          >PT</span
+        >
       </button>
 
       <button
-        class="lang-pill"
-        [class.active]="currentLang === 'en'"
+        class="flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all duration-300"
+        [ngClass]="{
+          'bg-white shadow-sm ring-1 ring-black/5 scale-105': currentLang === 'en',
+          'hover:bg-white/50 opacity-70 hover:opacity-100': currentLang !== 'en',
+        }"
         (click)="switchLanguage('en')"
         title="English"
       >
-        <span class="flag">🇺🇸</span>
-        <span class="code" *ngIf="currentLang === 'en'">EN</span>
+        <span class="text-base leading-none filter" [class.grayscale]="currentLang !== 'en'"
+          >🇺🇸</span
+        >
+        <span
+          class="text-xs font-bold text-neutral-800 leading-none pt-0.5"
+          *ngIf="currentLang === 'en'"
+          >EN</span
+        >
       </button>
     </div>
   `,
-  styles: [
-    `
-      @import '../../../../variables';
-
-      .lang-selector-modern {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.25rem;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 99px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      .lang-pill {
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 0.35rem;
-        padding: 0.35rem 0.5rem;
-        border-radius: 20px;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-        .flag {
-          font-size: 1.1rem;
-          filter: grayscale(100%);
-          opacity: 0.7;
-          transition: all 0.2s;
-        }
-
-        .code {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: $text-main;
-          animation: fadeIn 0.3s ease;
-        }
-
-        &:hover {
-          background: rgba(255, 255, 255, 0.5);
-          .flag {
-            filter: grayscale(0%);
-            opacity: 1;
-          }
-        }
-
-        &.active {
-          background: white;
-          box-shadow: $shadow-sm;
-
-          .flag {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
-          }
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          width: 0;
-        }
-        to {
-          opacity: 1;
-          width: auto;
-        }
-      }
-    `,
-  ],
+  styles: [],
 })
 export class LanguageSelectorComponent {
   currentLang: string;

@@ -1,10 +1,10 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { AuthService } from '../../../auth.service';
-
 import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -18,9 +18,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
       </button>
 
       <!-- Left side (Empty now as logo is in sidebar) -->
-      <div class="header-left">
-        <!-- Optional: Breadcrumb or Page Title could go here -->
-      </div>
+      <div class="header-left"></div>
 
       <!-- Right side: Actions -->
       <div class="header-right">
@@ -35,26 +33,35 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
           <span class="notification-badge"></span>
         </button>
 
-        <!-- User Profile (Click to View Profile, Logout is in Sidebar now) -->
-        <div class="user-profile-pill">
-          <div class="avatar-ring">
-            <div class="avatar-img">
-              <span>DC</span>
+        <!-- User Profile -->
+        <div class="user-profile-pill" (click)="logout()" title="Sair do sistema">
+          <ng-container *ngIf="user$ | async as user; else loadingUser">
+            <div class="avatar-ring">
+              <div class="avatar-img">
+                <span>{{ user.initials }}</span>
+              </div>
             </div>
-          </div>
-          <div class="user-details">
-            <span class="user-name">Dr. Claudio</span>
-            <span class="user-role">Médico</span>
-          </div>
+            <div class="user-details">
+              <span class="user-name">{{ user.name }}</span>
+              <span class="user-role">{{ user.role | translate }}</span>
+            </div>
+          </ng-container>
+          <ng-template #loadingUser>
+            <div class="avatar-ring">
+              <div class="avatar-img">
+                <span>...</span>
+              </div>
+            </div>
+          </ng-template>
         </div>
       </div>
     </header>
   `,
   styles: [
     `
-      @import '../../../../variables';
+      /* Temporarily removed SCSS - will use Tailwind */
 
-      :host {
+      header {
         display: block;
         padding: 1rem 2rem 0; /* Add top padding so it floats */
         z-index: 50;
@@ -66,17 +73,17 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
         justify-content: space-between;
         align-items: center;
         background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 20px;
         padding: 0.75rem 1.5rem;
-        box-shadow: $shadow-sm;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
 
         &:hover {
           background: rgba(255, 255, 255, 0.8);
-          box-shadow: $shadow-md;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
       }
 
@@ -90,7 +97,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
       .divider-vertical {
         width: 1px;
         height: 24px;
-        background-color: $neutral-300;
+        background-color: #d4d4d8;
       }
 
       /* --- Mobile Menu Button --- */
@@ -101,7 +108,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
         border-radius: 12px;
         border: 1px solid transparent;
         background: rgba(255, 255, 255, 0.5);
-        color: $text-secondary;
+        color: #71717a;
         align-items: center;
         justify-content: center;
         cursor: pointer;
@@ -110,11 +117,11 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
 
         &:hover {
           background: white;
-          color: $primary-600;
-          box-shadow: $shadow-sm;
+          color: #2563eb;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
 
-        @media (max-width: $tablet) {
+        @media (max-width: 1024px) {
           display: flex;
         }
       }
@@ -126,7 +133,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
         border-radius: 12px;
         border: 1px solid transparent;
         background: rgba(255, 255, 255, 0.5);
-        color: $text-secondary;
+        color: #71717a;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -137,8 +144,8 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
 
         &:hover {
           background: white;
-          color: $primary-600;
-          box-shadow: $shadow-sm;
+          color: #2563eb;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         }
 
         .notification-badge {
@@ -147,7 +154,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
           right: 10px;
           width: 8px;
           height: 8px;
-          background: $error;
+          background: #ef4444;
           border-radius: 50%;
           border: 2px solid white;
         }
@@ -172,7 +179,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
 
       .avatar-ring {
         padding: 2px;
-        background: linear-gradient(135deg, $primary-300, $primary-600);
+        background: linear-gradient(135deg, #93c5fd, #2563eb);
         border-radius: 50%;
       }
 
@@ -186,7 +193,7 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
         justify-content: center;
         font-weight: 700;
         font-size: 0.85rem;
-        color: $primary-700;
+        color: #1d4ed8;
       }
 
       .user-details {
@@ -197,12 +204,12 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
         .user-name {
           font-size: 0.9rem;
           font-weight: 600;
-          color: $text-main;
+          color: #18181b;
           line-height: 1.2;
         }
         .user-role {
           font-size: 0.7rem;
-          color: $text-secondary;
+          color: #71717a;
           font-weight: 500;
         }
 
@@ -213,13 +220,18 @@ import { LanguageSelectorComponent } from '../language-selector/language-selecto
     `,
   ],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Output() toggleMenu = new EventEmitter<void>();
+  user$: Observable<any>;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-  ) {}
+  ) {
+    this.user$ = this.authService.currentUser$;
+  }
+
+  ngOnInit() {}
 
   onToggleMenu() {
     this.toggleMenu.emit();

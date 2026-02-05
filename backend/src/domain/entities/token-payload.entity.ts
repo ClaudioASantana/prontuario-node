@@ -2,6 +2,7 @@
 export class TokenPayload {
   userId: string;
   email: string;
+  name: string;
   roles: string[];
   permissions: string[];
   organizationId?: string;
@@ -12,6 +13,7 @@ export class TokenPayload {
   constructor(
     userId: string,
     email: string,
+    name: string,
     roles: string[] = [],
     permissions: string[] = [],
     organizationId?: string,
@@ -19,6 +21,7 @@ export class TokenPayload {
   ) {
     this.userId = userId;
     this.email = email;
+    this.name = name;
     this.roles = roles;
     this.permissions = permissions;
     this.organizationId = organizationId;

@@ -7,7 +7,9 @@ import { Patient } from 'src/domain/entities/patient.entity';
 import { ErrorCode } from 'src/application/dtos/common/error-response.dto';
 
 @CommandHandler(CreatePatientCommand)
-export class CreatePatientHandler implements ICommandHandler<CreatePatientCommand, string> {
+export class CreatePatientHandler
+  implements ICommandHandler<CreatePatientCommand, string>
+{
   constructor(
     @Inject(IPatientRepositoryToken)
     private readonly repository: IPatientRepository,
@@ -35,10 +37,19 @@ export class CreatePatientHandler implements ICommandHandler<CreatePatientComman
     patient.city = command.city;
     patient.state = command.state;
     patient.bloodType = command.bloodType;
-    if (command.isOrganDonor !== undefined) patient.isOrganDonor = command.isOrganDonor;
+    if (command.isOrganDonor !== undefined)
+      patient.isOrganDonor = command.isOrganDonor;
     if (command.smoker !== undefined) patient.smoker = command.smoker;
-    if (command.alcoholConsumption !== undefined) patient.alcoholConsumption = command.alcoholConsumption;
-    if (command.activityLevel !== undefined) patient.activityLevel = command.activityLevel;
+    if (command.alcoholConsumption !== undefined)
+      patient.alcoholConsumption = command.alcoholConsumption;
+    if (command.activityLevel !== undefined)
+      patient.activityLevel = command.activityLevel;
+    if (command.insurancePlan !== undefined)
+      patient.insurancePlan = command.insurancePlan;
+    if (command.insuranceNumber !== undefined)
+      patient.insuranceNumber = command.insuranceNumber;
+    if (command.receivedTransfusion10Years !== undefined)
+      patient.receivedTransfusion10Years = command.receivedTransfusion10Years;
 
     await this.repository.create(patient);
     return patient.id;
