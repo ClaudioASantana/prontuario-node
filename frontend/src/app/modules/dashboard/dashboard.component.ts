@@ -1,136 +1,185 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { GlassCardComponent } from '../../shared/components/ui/glass-card.component';
+import { GlassButtonComponent } from '../../shared/components/ui/glass-button.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, GlassCardComponent, GlassButtonComponent],
   template: `
     <div class="dashboard-container">
-      <!-- Header Section -->
-      <div class="dashboard-header">
-        <div>
-          <h1 class="welcome-title">
-            {{ 'DASHBOARD.TITLE' | translate }}
-            <span class="subtitle">{{ today | date: 'EEEE, d MMMM' }}</span>
-          </h1>
-          <p class="welcome-subtitle">Visão geral da sua clínica hoje.</p>
-        </div>
-        <div class="header-actions">
-          <button class="btn-secondary"><i class="bi bi-calendar3"></i> Ver Agenda</button>
-          <button class="btn-primary"><i class="bi bi-plus-lg"></i> Novo Atendimento</button>
-        </div>
-      </div>
+      <!-- Decorative Background Elements -->
+      <div class="mesh-gradient-1"></div>
+      <div class="mesh-gradient-2"></div>
 
-      <!-- Stats Grid -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="icon-wrapper bg-blue">
-            <i class="bi bi-people-fill"></i>
+      <!-- Main Content -->
+      <div class="dashboard-content">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+          <div class="header-text">
+            <h1 class="welcome-title">
+              {{ 'DASHBOARD.TITLE' | translate }}
+              <span class="emoji-wave">👋</span>
+            </h1>
+            <p class="date-display">
+              <i class="bi bi-calendar4-week"></i>
+              {{ today | date: 'EEEE, d MMMM' }}
+            </p>
           </div>
-          <div class="stat-info">
-            <span class="value">1,245</span>
-            <span class="label">{{ 'DASHBOARD.STATS.PATIENTS' | translate }}</span>
+          <div class="header-actions">
+            <app-glass-button variant="glass">
+              <i class="bi bi-search"></i>
+            </app-glass-button>
+            <app-glass-button variant="glass">
+              <i class="bi bi-bell"></i>
+              <span
+                class="notification-dot"
+                style="position: absolute; top: 10px; right: 10px; width: 8px; height: 8px; background: #ef4444; border-radius: 50%; border: 2px solid white;"
+              ></span>
+            </app-glass-button>
+            <app-glass-button
+              variant="primary-gradient"
+              label="Novo Atendimento"
+              (onClick)="onNewAppointment()"
+            >
+              <i class="bi bi-plus-lg" icon></i>
+            </app-glass-button>
           </div>
-          <div class="stat-trend positive"><i class="bi bi-arrow-up-short"></i> 12%</div>
-        </div>
+        </header>
 
-        <div class="stat-card">
-          <div class="icon-wrapper bg-teal">
-            <i class="bi bi-calendar-check"></i>
+        <!-- KPI / Stats Grid -->
+        <section class="stats-grid">
+          <div class="glass-card stat-card">
+            <div class="stat-icon-wrapper gradient-blue">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <div class="stat-details">
+              <span class="stat-value">1,245</span>
+              <span class="stat-label">{{ 'DASHBOARD.STATS.PATIENTS' | translate }}</span>
+            </div>
+            <div class="stat-trend positive">
+              <i class="bi bi-graph-up-arrow"></i>
+              <span>+12%</span>
+            </div>
           </div>
-          <div class="stat-info">
-            <span class="value">28</span>
-            <span class="label">{{ 'DASHBOARD.STATS.APPOINTMENTS' | translate }}</span>
-          </div>
-          <div class="stat-trend neutral"><i class="bi bi-dash"></i> 0%</div>
-        </div>
 
-        <div class="stat-card">
-          <div class="icon-wrapper bg-rose">
-            <i class="bi bi-list-task"></i>
+          <div class="glass-card stat-card">
+            <div class="stat-icon-wrapper gradient-teal">
+              <i class="bi bi-calendar-check-fill"></i>
+            </div>
+            <div class="stat-details">
+              <span class="stat-value">28</span>
+              <span class="stat-label">{{ 'DASHBOARD.STATS.APPOINTMENTS' | translate }}</span>
+            </div>
+            <div class="stat-trend neutral">
+              <i class="bi bi-dash"></i>
+              <span>0%</span>
+            </div>
           </div>
-          <div class="stat-info">
-            <span class="value">12</span>
-            <span class="label">{{ 'DASHBOARD.STATS.TASKS' | translate }}</span>
-          </div>
-          <div class="stat-trend negative">
-            <i class="bi bi-exclamation-circle"></i> 3 pendentes
-          </div>
-        </div>
-      </div>
 
-      <!-- Main Content Grid -->
-      <div class="content-grid">
-        <!-- Agenda Section -->
-        <div class="content-card agenda-card">
-          <div class="card-header">
-            <h3>Agenda do Dia</h3>
-            <button class="btn-icon"><i class="bi bi-three-dots"></i></button>
+          <div class="glass-card stat-card">
+            <div class="stat-icon-wrapper gradient-rose">
+              <i class="bi bi-clipboard-check-fill"></i>
+            </div>
+            <div class="stat-details">
+              <span class="stat-value">12</span>
+              <span class="stat-label">{{ 'DASHBOARD.STATS.TASKS' | translate }}</span>
+            </div>
+            <div class="stat-trend negative">
+              <i class="bi bi-exclamation-circle-fill"></i>
+              <span>3 pendentes</span>
+            </div>
           </div>
-          <div class="card-body">
-            <ul class="agenda-list">
-              <li *ngFor="let apt of appointments" class="agenda-item">
-                <div class="time-col">
-                  <span class="time">{{ apt.time }}</span>
-                </div>
-                <div class="info-col">
-                  <span class="patient-name">{{ apt.patient }}</span>
-                  <span class="apt-type">{{ apt.type }}</span>
-                </div>
-                <div class="status-col">
-                  <span class="status-badge" [ngClass]="apt.status">
-                    {{ apt.status }}
-                  </span>
-                </div>
-                <div class="action-col">
-                  <button class="btn-icon-sm"><i class="bi bi-chevron-right"></i></button>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </section>
 
-        <!-- Tasks / Quick Actions Section -->
-        <div class="side-column">
-          <div class="content-card tasks-card">
+        <!-- Main Grid: Agenda & Quick Actions -->
+        <section class="main-grid">
+          <!-- Left Col: Agenda -->
+          <div class="glass-card agenda-section">
             <div class="card-header">
-              <h3>Pendências</h3>
+              <h3>
+                <i class="bi bi-clock-history text-primary"></i>
+                Próximos Atendimentos
+              </h3>
+              <button class="btn-link">Ver Agenda Completa</button>
             </div>
             <div class="card-body">
-              <ul class="task-list">
-                <li *ngFor="let task of tasks" class="task-item">
-                  <div class="task-check">
-                    <input type="checkbox" />
+              <ul class="agenda-list">
+                <li *ngFor="let apt of appointments" class="agenda-item">
+                  <div class="time-badge">
+                    {{ apt.time }}
                   </div>
-                  <div class="task-info">
-                    <span class="task-title">{{ task.title }}</span>
-                    <span class="task-due text-{{ task.priority }}">{{ task.due }}</span>
+                  <div class="agenda-info">
+                    <span class="patient-name">{{ apt.patient }}</span>
+                    <span class="apt-type">{{ apt.type }}</span>
                   </div>
+                  <div class="agenda-status">
+                    <span class="status-pill" [ngClass]="apt.status">
+                      {{ apt.status }}
+                    </span>
+                  </div>
+                  <button class="btn-icon-action">
+                    <i class="bi bi-three-dots-vertical"></i>
+                  </button>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div class="content-card quick-actions">
-            <h3>Acesso Rápido</h3>
-            <div class="actions-grid">
-              <button class="action-item">
-                <i class="bi bi-file-earmark-medical"></i>
-                <span>Prontuário</span>
-              </button>
-              <button class="action-item">
-                <i class="bi bi-capsule"></i>
-                <span>Prescrição</span>
-              </button>
-              <button class="action-item">
-                <i class="bi bi-person-plus"></i>
-                <span>Novo Paciente</span>
-              </button>
+          <!-- Right Col: Tasks & Shortcuts -->
+          <div class="side-column">
+            <!-- Shortcuts / Quick Actions -->
+            <div class="glass-card actions-card">
+              <div class="card-header">
+                <h3>Acesso Rápido</h3>
+              </div>
+              <div class="actions-grid">
+                <button class="action-btn">
+                  <div class="icon-box gradient-purple">
+                    <i class="bi bi-file-earmark-medical-fill"></i>
+                  </div>
+                  <span>Prontuário</span>
+                </button>
+                <button class="action-btn">
+                  <div class="icon-box gradient-orange">
+                    <i class="bi bi-capsule-pill"></i>
+                  </div>
+                  <span>Prescrição</span>
+                </button>
+                <button class="action-btn">
+                  <div class="icon-box gradient-green">
+                    <i class="bi bi-person-plus-fill"></i>
+                  </div>
+                  <span>Paciente</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Pending Tasks -->
+            <div class="glass-card tasks-card">
+              <div class="card-header">
+                <h3>Pendências</h3>
+                <span class="badge-count">{{ tasks.length }}</span>
+              </div>
+              <ul class="task-list">
+                <li *ngFor="let task of tasks" class="task-item">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                  <div class="task-content">
+                    <span class="task-text">{{ task.title }}</span>
+                    <span class="task-meta" [ngClass]="'priority-' + task.priority">
+                      {{ task.due }} • {{ task.priority }}
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   `,
@@ -138,43 +187,104 @@ import { TranslateModule } from '@ngx-translate/core';
     `
       @import '../../../variables';
 
-      .dashboard-container {
-        padding: 2rem 2.5rem;
-        max-width: 1600px;
-        margin: 0 auto;
-        min-height: 100%;
+      /* --- Animation Keyframes --- */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
       }
 
-      /* Header */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .dashboard-container {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+        background-color: $background-page;
+        font-family: 'Inter', sans-serif; /* Ensure modern font */
+      }
+
+      /* --- Background Ambience --- */
+      .mesh-gradient-1,
+      .mesh-gradient-2 {
+        position: absolute;
+        width: 60vw;
+        height: 60vw;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        z-index: 0;
+      }
+      .mesh-gradient-1 {
+        top: -10%;
+        left: -10%;
+        background: radial-gradient(circle, $primary-400, $primary-200);
+        animation: float 20s infinite ease-in-out;
+      }
+      .mesh-gradient-2 {
+        bottom: -10%;
+        right: -10%;
+        background: radial-gradient(circle, $primary-200, $primary-300);
+        animation: float 25s infinite ease-in-out reverse;
+      }
+
+      .dashboard-content {
+        position: relative;
+        z-index: 10;
+        padding: 2rem 3rem;
+        max-width: 1600px;
+        margin: 0 auto;
+        animation: fadeIn 0.6s ease-out;
+      }
+
+      /* --- Header --- */
       .dashboard-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        margin-bottom: 2.5rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid $border-light;
+        margin-bottom: 3rem;
 
-        .welcome-title {
-          font-size: 1.75rem;
-          font-weight: 700;
-          color: $text-main;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 0.25rem;
+        .header-text {
+          .welcome-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.05rem;
+            color: $text-main;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
 
-          .subtitle {
-            font-size: 1rem;
-            font-weight: 400;
-            color: $text-secondary;
-            text-transform: capitalize;
+            .emoji-wave {
+              font-size: 2rem;
+              animation: float 3s infinite ease-in-out;
+            }
           }
-        }
 
-        .welcome-subtitle {
-          color: $text-secondary;
-          margin-top: 0.5rem;
-          font-size: 0.95rem;
+          .date-display {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: $text-secondary;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+          }
         }
 
         .header-actions {
@@ -183,143 +293,219 @@ import { TranslateModule } from '@ngx-translate/core';
         }
       }
 
-      /* Stats Grid */
+      /* --- Buttons & Inputs --- */
+      .btn-glass {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        color: $text-main;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.7);
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .notification-dot {
+          position: absolute;
+          top: 10px;
+          right: 12px;
+          width: 8px;
+          height: 8px;
+          background: $error;
+          border-radius: 50%;
+          border: 2px solid white;
+        }
+      }
+
+      .btn-primary-gradient {
+        background: linear-gradient(135deg, $primary-600, $primary-500);
+        color: white;
+        border: none;
+        height: 48px;
+        padding: 0 1.5rem;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px rgba($primary-600, 0.25);
+
+        &:hover {
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 8px 15px rgba($primary-600, 0.35);
+        }
+
+        i {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* --- Glass Cards --- */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 24px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        padding: 1.5rem;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.1);
+        }
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        h3 {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: $text-main;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+
+          i {
+            font-size: 1.1rem;
+          }
+        }
+
+        .btn-link {
+          background: none;
+          border: none;
+          color: $primary-600;
+          font-weight: 600;
+          font-size: 0.9rem;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      /* --- Stats Grid --- */
       .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
         margin-bottom: 2.5rem;
+
+        @media (max-width: 900px) {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
       }
 
       .stat-card {
-        background: $background-card;
-        border-radius: $border-radius-base;
-        padding: 1.5rem;
-        box-shadow: $shadow-sm;
-        border: 1px solid $border-light;
         display: flex;
         align-items: center;
         gap: 1.25rem;
-        transition: all 0.2s;
-        position: relative;
-        overflow: hidden;
+        padding: 1.75rem;
 
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: $shadow-md;
+        @media (max-width: $mobile) {
+          padding: 1.25rem;
+          gap: 1rem;
         }
 
-        .icon-wrapper {
-          width: 3.5rem;
-          height: 3.5rem;
-          border-radius: 1rem;
+        .stat-icon-wrapper {
+          width: 64px;
+          height: 64px;
+          border-radius: 18px;
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.5rem;
-          flex-shrink: 0;
+          font-size: 1.75rem;
+          color: white;
 
-          &.bg-blue {
-            background-color: $primary-50;
-            color: $primary-600;
+          &.gradient-blue {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
           }
-          &.bg-teal {
-            background-color: rgba(16, 185, 129, 0.1);
-            color: #10b981;
+          &.gradient-teal {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
           }
-          &.bg-rose {
-            background-color: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
+          &.gradient-rose {
+            background: linear-gradient(135deg, #f43f5e, #e11d48);
+            box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
           }
         }
 
-        .stat-info {
-          flex-grow: 1;
+        .stat-details {
+          flex: 1;
           display: flex;
           flex-direction: column;
 
-          .value {
-            font-size: 1.75rem;
-            font-weight: 700;
+          .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
             color: $text-main;
-            line-height: 1.2;
+            line-height: 1.1;
           }
-          .label {
-            font-size: 0.875rem;
+          .stat-label {
+            font-size: 0.9rem;
             color: $text-secondary;
             font-weight: 500;
           }
         }
 
         .stat-trend {
-          font-size: 0.85rem;
-          font-weight: 600;
           display: flex;
-          align-items: center;
-          gap: 0.25rem;
-          padding: 0.25rem 0.5rem;
-          border-radius: 99px;
+          flex-direction: column;
+          align-items: flex-end;
+          font-size: 0.85rem;
+          font-weight: 700;
 
           &.positive {
-            background-color: rgba(16, 185, 129, 0.1);
             color: #10b981;
+            i {
+              transform: rotate(45deg);
+            }
           }
           &.neutral {
-            background-color: $neutral-100;
             color: $text-secondary;
           }
           &.negative {
-            background-color: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
+            color: #f43f5e;
           }
         }
       }
 
-      /* Content Grid */
-      .content-grid {
+      /* --- Main Grid --- */
+      .main-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 2rem;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
           grid-template-columns: 1fr;
         }
       }
 
-      .side-column {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .content-card {
-        background: $background-card;
-        border-radius: $border-radius-base;
-        border: 1px solid $border-light;
-        box-shadow: $shadow-sm;
-        overflow: hidden;
-
-        .card-header {
-          padding: 1.25rem 1.5rem;
-          border-bottom: 1px solid $border-light;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: $text-main;
-            margin: 0;
-          }
-        }
-
-        .card-body {
-          padding: 1.5rem;
-        }
-      }
-
-      /* Agenda List */
+      /* --- Agenda List --- */
       .agenda-list {
         list-style: none;
         padding: 0;
@@ -329,31 +515,37 @@ import { TranslateModule } from '@ngx-translate/core';
           display: flex;
           align-items: center;
           padding: 1rem 0;
-          border-bottom: 1px solid $border-light;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+          position: relative;
 
           &:last-child {
             border-bottom: none;
           }
-
-          .time-col {
-            width: 80px;
-            flex-shrink: 0;
-            .time {
-              font-weight: 700;
-              color: $text-main;
-              font-size: 1rem;
+          &:hover {
+            .btn-icon-action {
+              opacity: 1;
             }
           }
 
-          .info-col {
-            flex-grow: 1;
+          .time-badge {
+            background: $neutral-100;
+            color: $text-main;
+            padding: 0.5rem 0.75rem;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-right: 1.25rem;
+          }
+
+          .agenda-info {
+            flex: 1;
             display: flex;
             flex-direction: column;
 
             .patient-name {
               font-weight: 600;
               color: $text-main;
-              font-size: 1rem;
+              font-size: 1.05rem;
             }
             .apt-type {
               font-size: 0.85rem;
@@ -361,89 +553,49 @@ import { TranslateModule } from '@ngx-translate/core';
             }
           }
 
-          .status-col {
-            margin-right: 1rem;
-          }
-
-          .status-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 99px;
+          .status-pill {
+            padding: 0.35rem 0.85rem;
+            border-radius: 30px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
 
             &.confirmed {
-              background: rgba(59, 130, 246, 0.1);
-              color: $primary-600;
+              background: rgba(37, 99, 235, 0.1);
+              color: #2563eb;
             }
             &.waiting {
               background: rgba(245, 158, 11, 0.1);
-              color: #f59e0b;
+              color: #d97706;
             }
             &.pending {
               background: $neutral-100;
               color: $text-secondary;
             }
           }
-        }
-      }
 
-      /* Task List */
-      .task-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        .task-item {
-          display: flex;
-          gap: 0.75rem;
-          padding: 0.75rem 0;
-          border-bottom: 1px solid $border-light;
-
-          &:last-child {
-            border-bottom: none;
-          }
-
-          .task-info {
-            display: flex;
-            flex-direction: column;
-
-            .task-title {
-              font-size: 0.95rem;
-              color: $text-main;
-              line-height: 1.3;
-            }
-            .task-due {
-              font-size: 0.75rem;
-              margin-top: 0.25rem;
-              font-weight: 500;
-            }
-
-            .text-high {
-              color: $error;
-            }
-            .text-medium {
-              color: #f59e0b;
-            }
-            .text-low {
-              color: $text-secondary;
+          .btn-icon-action {
+            background: none;
+            border: none;
+            color: $text-secondary;
+            cursor: pointer;
+            padding: 0.5rem;
+            margin-left: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.2s;
+            &:hover {
+              color: $primary-600;
             }
           }
         }
       }
 
-      /* Quick Actions */
-      .quick-actions {
-        padding: 1.5rem;
-        h3 {
-          font-size: 1rem;
-          font-weight: 600;
-          margin: 0 0 1rem 0;
-          color: $text-secondary;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          font-size: 0.75rem;
-        }
+      /* --- Quick Actions --- */
+      .side-column {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
       }
 
       .actions-grid {
@@ -451,106 +603,155 @@ import { TranslateModule } from '@ngx-translate/core';
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
 
-        .action-item {
-          background: $neutral-50;
-          border: 1px solid $border-light;
-          border-radius: $border-radius-base;
-          padding: 1rem 0.5rem;
+        @media (max-width: $mobile) {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.75rem;
+        }
+
+        .action-btn {
+          background: rgba(255, 255, 255, 0.5);
+          border: 1px solid white;
+          border-radius: 20px;
+          padding: 1.25rem 0.5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 0.5rem;
+          gap: 0.75rem;
           cursor: pointer;
           transition: all 0.2s;
 
-          i {
-            font-size: 1.5rem;
-            color: $primary-500;
+          @media (max-width: $mobile) {
+            padding: 1rem 0.5rem;
           }
+
+          .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            &.gradient-purple {
+              background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            }
+            &.gradient-orange {
+              background: linear-gradient(135deg, #f97316, #ea580c);
+            }
+            &.gradient-green {
+              background: linear-gradient(135deg, #10b981, #059669);
+            }
+          }
+
           span {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: $text-main;
-            text-align: center;
           }
 
           &:hover {
             background: white;
-            border-color: $primary-200;
-            transform: translateY(-2px);
-            box-shadow: $shadow-sm;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
           }
         }
       }
 
-      /* Buttons */
-      .btn-primary {
-        background: $primary-600;
+      /* --- Task List --- */
+      .badge-count {
+        background: $error;
         color: white;
-        border: none;
-        padding: 0.75rem 1.25rem;
-        border-radius: $border-radius-sm;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        box-shadow: $shadow-sm;
-        transition: all 0.2s;
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 10px;
+        font-weight: 700;
+      }
 
-        &:hover {
-          background: $primary-700;
-          transform: translateY(-1px);
-          box-shadow: $shadow-md;
+      .task-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .task-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 0.85rem 0;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .custom-checkbox {
+            position: relative;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+
+            input {
+              opacity: 0;
+              width: 0;
+              height: 0;
+              &:checked + .checkmark {
+                background-color: $primary-500;
+                border-color: $primary-500;
+                &:after {
+                  display: block;
+                }
+              }
+            }
+            .checkmark {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              border: 2px solid $neutral-400;
+              border-radius: 6px;
+              transition: all 0.2s;
+              &:after {
+                content: '';
+                position: absolute;
+                display: none;
+                left: 6px;
+                top: 2px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+              }
+            }
+          }
+
+          .task-content {
+            display: flex;
+            flex-direction: column;
+
+            .task-text {
+              font-size: 0.95rem;
+              color: $text-main;
+              font-weight: 500;
+            }
+            .task-meta {
+              font-size: 0.75rem;
+              margin-top: 0.25rem;
+              font-weight: 600;
+
+              &.priority-high {
+                color: $error;
+              }
+              &.priority-medium {
+                color: $warning;
+              }
+              &.priority-low {
+                color: $text-secondary;
+              }
+            }
+          }
         }
-      }
-
-      .btn-secondary {
-        background: white;
-        color: $text-main;
-        border: 1px solid $border-light;
-        padding: 0.75rem 1.25rem;
-        border-radius: $border-radius-sm;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        transition: all 0.2s;
-
-        &:hover {
-          background: $neutral-50;
-          border-color: $neutral-300;
-        }
-      }
-
-      .btn-icon,
-      .btn-icon-sm {
-        background: transparent;
-        border: none;
-        color: $text-secondary;
-        cursor: pointer;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s;
-
-        &:hover {
-          background: $neutral-100;
-          color: $primary-600;
-        }
-      }
-
-      .btn-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 1.25rem;
-      }
-      .btn-icon-sm {
-        width: 28px;
-        height: 28px;
-        font-size: 1rem;
       }
     `,
   ],
@@ -571,4 +772,8 @@ export class DashboardComponent {
     { title: 'Assinar evolução de Maria C.', priority: 'medium', due: 'Hoje' },
     { title: 'Atualizar estoque', priority: 'low', due: 'Amanhã' },
   ];
+
+  onNewAppointment() {
+    console.log('Open new appointment modal');
+  }
 }

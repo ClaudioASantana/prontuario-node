@@ -7,72 +7,104 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="lang-selector">
+    <div class="lang-selector-modern">
       <button
-        class="lang-btn"
+        class="lang-pill"
         [class.active]="currentLang === 'pt-br'"
         (click)="switchLanguage('pt-br')"
         title="Português"
       >
-        🇧🇷
+        <span class="flag">🇧🇷</span>
+        <span class="code" *ngIf="currentLang === 'pt-br'">PT</span>
       </button>
-      <div class="divider"></div>
+
       <button
-        class="lang-btn"
+        class="lang-pill"
         [class.active]="currentLang === 'en'"
         (click)="switchLanguage('en')"
         title="English"
       >
-        🇺🇸
+        <span class="flag">🇺🇸</span>
+        <span class="code" *ngIf="currentLang === 'en'">EN</span>
       </button>
     </div>
   `,
-  styles: [`
-    @import '../../../../variables';
+  styles: [
+    `
+      @import '../../../../variables';
 
-    .lang-selector {
-      display: flex;
-      align-items: center;
-      background-color: $background-basic;
-      border-radius: 20px;
-      padding: 0.25rem;
-    }
-
-    .divider {
-      width: 1px;
-      height: 1rem;
-      background-color: $border-basic;
-      margin: 0 0.25rem;
-    }
-
-    .lang-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.25rem;
-      padding: 0.25rem 0.5rem;
-      border-radius: 50%;
-      opacity: 0.5;
-      transition: all 0.2s;
-      filter: grayscale(100%);
-
-      &:hover {
-        opacity: 0.8;
-        transform: scale(1.1);
+      .lang-selector-modern {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 99px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
-      &.active {
-        opacity: 1;
-        filter: grayscale(0%);
+      .lang-pill {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.35rem 0.5rem;
+        border-radius: 20px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .flag {
+          font-size: 1.1rem;
+          filter: grayscale(100%);
+          opacity: 0.7;
+          transition: all 0.2s;
+        }
+
+        .code {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: $text-main;
+          animation: fadeIn 0.3s ease;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.5);
+          .flag {
+            filter: grayscale(0%);
+            opacity: 1;
+          }
+        }
+
+        &.active {
+          background: white;
+          box-shadow: $shadow-sm;
+
+          .flag {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+          }
+        }
       }
-    }
-  `]
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          width: 0;
+        }
+        to {
+          opacity: 1;
+          width: auto;
+        }
+      }
+    `,
+  ],
 })
 export class LanguageSelectorComponent {
   currentLang: string;
 
   constructor(private translate: TranslateService) {
-    // Initialize with saved or default language
     const savedLang = localStorage.getItem('app_language');
     this.currentLang = savedLang || 'pt-br';
     this.translate.use(this.currentLang);
